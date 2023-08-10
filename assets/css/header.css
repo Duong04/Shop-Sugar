@@ -1,0 +1,200 @@
+nav{
+    width: 1000px;
+    height: 140px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo{
+    width: 12%;
+}
+
+.logo img{
+    width: 100%;
+}
+
+.search-menu{
+    width: 80%;
+    height: 100%;
+}
+
+.search-menu-item{
+    width: 100%;
+    height: 40%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.search{
+    width: 45%;
+}
+
+.search form{
+    width: 100%;
+    background-color: var(--white-color);
+    border-radius: 15px;
+}
+
+.search input{
+    width: 85%;
+    height: 35px;
+    background-color: var(--white-color);
+    padding-left: 10px;
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+    border: none;
+}
+
+.search input:focus{
+    outline: none;
+}
+
+.search button{
+    width: 13%;
+    height: 35px;
+    background-color: var(--white-color);
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+    border: none;
+    cursor: pointer;
+}
+
+.signup-login-cart{
+    width: 43%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.signup-login{
+    width: 45%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.login a,
+.sign-up a{
+    color: var(--bgr-color);
+}
+
+.login a:hover,
+.sign-up a:hover{
+    text-decoration: underline;
+}
+
+.cart{
+    position: relative;
+}
+
+.number-cart{
+    position: absolute;
+    top: -9px;
+    right: 8px;
+    background-color: var(--red-color);
+    color: var(--white-color);
+    padding: 3px 7px;
+    font-size: 0.6rem;
+    border-radius: 50%;
+}
+
+.cart a{
+    padding: 15px 25px;
+    background-color: var(--main-color);
+    color: var(--white-color);
+    font-weight: 550;
+    font-size: 0.8rem;
+    border-radius: 5px;
+    margin-left: 5px;
+}
+
+.cart a:hover{
+    opacity: 0.8;
+}
+
+.account{
+    text-align: center;
+    margin-top: 20px;
+    display: flex;
+}
+
+.name-avatar{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.avatar{
+    width: 25px;
+    height: 25px;
+    margin: auto;
+    font-size: 0.8rem;
+    border-radius: 50%;
+    background-color: #ccc;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.account h4{
+    font-weight: 200;
+    font-size: 0.9rem;
+    color: #504d4d;
+}
+
+.logout{
+    width: 30%;
+}
+
+.logout a{
+    color: var(--bgr-color);
+}
+
+
+menu{
+    height: 50%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.menu{
+    width: 70%;
+}
+
+.menu li{
+    list-style: none;
+}
+
+.menu>li{
+    display: inline-block;
+}
+
+.menu a{
+    color: var(--bgr-color);
+}
+
+.menu>li>a{
+    font-weight: 550;
+    font-size: 1.0rem;
+    padding: 10px 13px;
+    border-radius: 8px;
+    transition: all ease 0.6s;
+    -webkit-transition: all ease 0.6s;
+}
+
+.menu>li>a:hover{
+    background-color: var(--bgr-color);
+    color: var(--white-color);
+}
+
+.admin{
+    position: absolute;
+    right: 20px;
+    top: 10px;
+    padding: 10px 8px;
+    border-radius: 10px;
+    font-size: 1.0rem;
+    background-color: #ccc;
+}

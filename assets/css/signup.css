@@ -1,0 +1,286 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: Arial,Helvetica,sans-serif;
+}
+
+:root{
+    --black-color: #000;
+    --white-color: #fff;
+    --main-color: #108fd8;
+    --bgr-color: #05649a;
+    --red-color: #d0021c;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+a{
+    text-decoration: none;
+    color: var(--black-color);
+}
+
+
+main{
+    width: 100%;
+    background-color: #f3f3f3;
+}
+
+/* header */
+
+header{
+    width: 100%;
+    height: auto;
+    background-image: url(../img/background.jpg);
+}
+
+@keyframes anima{
+    from{
+        opacity: 0;
+        transform: translateY(-20px);
+        -webkit-transform: translateY(-20px);
+    }to{
+        opacity: 1;
+        transform: translateY(0);
+        -webkit-transform: translateY(0);
+    }
+}
+
+@keyframes opacity{
+    from{
+        opacity: 0;
+    }to{
+        opacity: 1;
+    }
+}
+
+/* article */
+article{
+    width: 100%;
+}
+
+.main-form{
+    width: 1000px;
+    height: auto;
+    margin: auto;
+    margin-top: 50px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.form-img{
+    width: 55%;
+    margin-top: 100px;
+}
+
+.form-img img{
+    width: 100%;
+}
+
+.form{
+    width: 40%;
+    height: auto;
+    padding: 15px 0 50px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px #ccc;
+}
+
+.form h3{
+    text-align: center;
+    margin-top: 15px;
+}
+
+.form form{
+    margin-top: 10px;
+}
+
+.password,
+.email-phone,
+.your-name{
+    width: 90%;
+    margin: auto;
+    margin-top: 10px;
+}
+
+.password label,
+.email-phone label,
+.your-name label{
+    font-size: 0.9rem;
+    color: #5e5c5c;
+}
+
+.password input,
+.email-phone input,
+.your-name input{
+    width: 100%;
+    height: 40px;
+    padding-left: 10px;
+    margin-top: 5px;
+}
+
+.password input:focus,
+.email-phone input:focus,
+.your-name input:focus{
+    outline: none;
+    border: none;
+    box-shadow: 0 0 3px var(--bgr-color);
+}
+
+.password{
+    position: relative;
+}
+
+.password i{
+    position: absolute;
+    right: 10px;
+    top: 55%;
+    cursor: pointer;
+}
+
+.messages{
+    width: 90%;
+    margin: auto;
+    color: var(--red-color);
+}
+
+.btn-signup{
+    width: 90%;
+    margin: 30px auto 10px;
+}
+
+.btn-signup button{
+    width: 100%;
+    height: 40px;
+    border: none;
+    cursor: pointer;
+    font-size: 1.0rem;
+    color: var(--white-color);
+    background-color: var(--main-color);
+}
+
+.btn-signup button:hover{
+    opacity: 0.7;
+}
+
+.check-box{
+    width: 90%;
+    margin: auto;
+    display: flex;
+    align-items: flex-start;
+    gap: 5px;
+}
+
+.check-box span{
+    font-size: 0.9rem;
+}
+
+.check-box a{
+    color: var(--main-color);
+}
+
+.check-box a:hover{
+    text-decoration: underline;
+}
+
+.or{
+    width: 90%;
+    height: 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px auto;
+    clear: both;
+    color: #5e5c5c;
+}
+
+.or .sp3,
+.or .sp1{
+    width: 41%;
+    height: 0.5px;
+    background-color: #5e5c5c;
+}
+
+.btn-fb-gg{
+    width: 90%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+.btn-gg,
+.btn-fb{
+    width: 48%;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    background-color: var(--white-color);
+    border: none;
+    border: 2px solid #ccc;
+    cursor: pointer;
+    transition: all ease 0.5s;
+}
+
+.btn-gg:hover,
+.btn-fb:hover{
+    background-color: #f1f1f1;
+}
+
+.btn-fb-gg img{
+    width: 15%;
+}
+
+.change-signup{
+    width: 90%;
+    margin: 20px auto;
+    display: flex;
+    justify-content: center;
+}
+
+.change-signup p{
+    font-size: 0.9rem;
+    color: #5e5c5c;
+}
+
+.change-signup a{
+    color: var(--main-color);
+}
+
+.change-signup a:hover{
+    text-decoration: underline;
+}
+
+/* footer */
+footer{
+    width: 100%;
+    background-color: var(--white-color);
+    margin-top: 50px;
+}
+
+.pay{
+    width: 30%;
+}
+
+.pay ul{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    list-style: none;
+    margin-top: 15px;
+}
+
+.pay img{
+    width: 90%;
+}
+
+.cap{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 40px;
+    background-color: #f5f5f5;
+}

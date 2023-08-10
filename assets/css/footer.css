@@ -1,0 +1,81 @@
+.footer-item{
+    width: 1000px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+.switch-help{
+    padding: 20px 0;
+}
+
+.title{
+    height: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.title h5{
+    font-size: 1.0rem;
+}
+
+.title>span{
+    font-size: 1.0rem;
+}
+
+.switch-help li{
+    list-style: none;
+    font-size: 0.9rem;
+    margin-top: 10px;
+}
+
+.switch-help a{
+    color: var(--main-color);
+    font-weight: 550;
+}
+
+.pay,
+.chung-nhan,
+.certification{
+    padding: 20px 0;
+}
+
+.pay h5,
+.chung-nhan h5,
+.certification h5{
+    font-size: 1.0rem;
+}
+
+.certification li{
+    list-style: none;
+    margin-top: 10px;
+}
+
+.certification a{
+    color: var(--black-color);
+    font-size: 0.9rem;
+}
+
+.chung-nhan{
+    width: 15%;
+}
+
+.chung-nhan ul{
+    list-style: none;
+}
+
+.pay{
+    width: 30%;
+}
+
+.pay ul{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    list-style: none;
+    margin-top: 15px;
+}
+
+.pay img{
+    width: 90%;
+}
