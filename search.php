@@ -33,11 +33,16 @@ if(isset($_GET['search'])){
                     $productname = $row['product_name'];
                     $price = $row['price'];
                     $oldprice = $row['old_price'];
-                    $sale = $row['discount_percent'];
                     $info1 = $row['info1'];
                     $info2 = $row['info2'];
                     $formattedPrice = number_format($price, 0, ',', '.');
                     $formattedOldPrice = number_format($oldprice, 0, ',', '.');
+                    if ($oldprice != 0) {
+                        $sale = ((($price - $oldprice ) / $oldprice) * 100);
+                    } else {
+                        $sale = "";
+                    }
+                    $saleInt = round(intval($sale),2)."%";
                 ?>
                 <div class="office-item">
                     <span>Trả góp 0%</span>
@@ -52,7 +57,7 @@ if(isset($_GET['search'])){
                         </div>
                         <div class="old-price">
                             <del><?php echo $formattedOldPrice; ?><sup>đ</sup></del>
-                            <span><?php echo $sale ?>%</span>
+                            <span><?php echo $saleInt; ?></span>
                         </div>
                         <div class="price">
                             <h6><sup><?php echo $formattedPrice; ?></sup>đ</h6>
