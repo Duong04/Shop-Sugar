@@ -48,7 +48,7 @@ if(isset($_GET['search'])){
                     <span>Trả góp 0%</span>
                     <a href="detail.php?product_id=<?php echo $row['product_id']; ?>">
                         <div class="office-img">
-                            <img src=<?php echo $images ?> alt="">
+                            <img src="<?php echo $images ?> "alt="">
                         </div>
                         <div class="office-name"><h6><?php echo $productname; ?></h6></div>
                         <div class="office-detail">

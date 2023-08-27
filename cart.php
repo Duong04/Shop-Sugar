@@ -111,7 +111,7 @@ if (isset($_POST['add-cart'])) {
                     </div>
                     <p>Không có sản phẩm nào trong giỏ hàng</p>
                     <div class="return-home">
-                        <a href="home.html">Quay về trang chủ</a>
+                        <a href="home.php">Quay về trang chủ</a>
                     </div>
                 </div>
                 <?php } ?>
