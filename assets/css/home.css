@@ -523,7 +523,12 @@ article{
     justify-content: space-between;
 }
 
-#btn1{
+.btn-click .active{
+    background-color: var(--main-color);
+    color: var(--white-color);
+}
+
+.btn-click-item:hover{
     background-color: var(--main-color);
     color: var(--white-color);
 }
@@ -562,10 +567,11 @@ article{
     height: auto;
 }
 
-#box-item3,
-#box-item2{
-    width: 100%;
-    height: auto;
+.box .active{
+    display: block;
+}
+
+.none{
     display: none;
 }
 

@@ -230,21 +230,21 @@ session_start();
             <section class="section5">
                 <h3>GỢI Ý HÔM NAY</h3>
                 <div class="btn-click">
-                    <div id="btn1" onclick="clickBtn(1)" class="btn-click-item">
+                    <div id="btn1" class="btn-click-item active">
                         <img src="./assets/img/brn-click/btn1.webp" alt="">
                         <span>Cho bạn</span>
                     </div>
-                    <div id="btn2" onclick="clickBtn(2)" class="btn-click-item">
+                    <div id="btn2"class="btn-click-item">
                         <img src="./assets/img/brn-click/btn2.webp" alt="">
                         <span>Laptop gaming</span>
                     </div>
-                    <div id="btn3" onclick="clickBtn(3)" class="btn-click-item">
+                    <div id="btn3" class="btn-click-item">
                         <img src="./assets/img/brn-click/btn3.webp" alt="">
                         <span>Tablet giá rẻ</span>
                     </div>
                 </div>
                 <div class="box">
-                    <div id="box-item">
+                    <div id="box-item" class="none active">
                         <div class="box-item-child">
                             <?php 
                                $results = mysqli_query($conn, "SELECT * FROM products WHERE product_id <= 25 ORDER BY RAND() LIMIT 12");
@@ -287,7 +287,7 @@ session_start();
                             <?php }; mysqli_free_result($results); ?>
                         </div>
                     </div>
-                    <div id="box-item2">
+                    <div id="box-item2" class="none">
                         <div class="box-item-child">
                         <?php 
                                $results = mysqli_query($conn, "SELECT * FROM products WHERE category_id = 11");
@@ -330,7 +330,7 @@ session_start();
                             <?php }; mysqli_free_result($results); ?>
                         </div>
                     </div>
-                    <div id="box-item3">
+                    <div id="box-item3" class="none">
                         <div class="box-item-child">
                         <?php 
                                $results = mysqli_query($conn, "SELECT * FROM products WHERE category_id = 12");
