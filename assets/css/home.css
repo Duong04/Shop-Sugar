@@ -543,8 +543,8 @@ article{
     align-items: center;
     gap: 10px;
     cursor: pointer;
-    transition: all ease 0.5s;
-    -webkit-transition: all ease 0.5s;
+    transition: all ease 0.2s;
+    -webkit-transition: all ease 0.2s;
 }
 
 .btn-click-item img{

@@ -22,6 +22,10 @@ a{
     color: var(--black-color);
 }
 
+img{
+    width: 100%;
+}
+
 
 main{
     width: 100%;
@@ -180,7 +184,50 @@ article{
     text-align: justify;
 }
 
+.description{
+    position: relative;
+    width: 100%;
+    height: 620px;
+    overflow: hidden;
+}
 
+.description p{
+    margin-top: 10px;
+}
+
+.product-info .active{
+    height: auto;
+}
+
+.before{
+    background: linear-gradient(to bottom,rgba(255 255 255/0),rgba(255 255 255/62.5),rgba(255 255 255/1));
+    bottom: 0;
+    height: 70px;
+    left: 0;
+    position: absolute;
+    width: 100%;
+    content: '';
+}
+
+.btn-view-all{
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.btn-view-all button{
+    padding: 10px 25px;
+    background-color: var(--white-color);
+    border: transparent;
+    cursor: pointer;
+    border: 2px solid #ccc;
+    transition:  all ease 0.3s;
+}
+
+.btn-view-all button:hover{
+    background-color: var(--main-color);
+    color: var(--white-color);
+}
 
 /* aside */
 

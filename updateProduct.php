@@ -45,11 +45,11 @@ if(isset($_POST['product-name']) && isset($_FILES['image-file']) && isset($_POST
             padding: 0;
             box-sizing: border-box;
         }
+
         form{
-            width: 600px;
-            height: 950px;
+            width: 1000px;
+            height: auto;
             box-shadow: 0 0 10px #ccc;
-            margin: auto;
             display: flex;
             flex-direction: column;
         }
@@ -117,7 +117,7 @@ if(isset($_POST['product-name']) && isset($_FILES['image-file']) && isset($_POST
 </head>
 <body>
     <form action="" method="post" enctype="multipart/form-data">
-        <h2>Thêm sản phẩm tại đây</h2>
+        <h2>Cập nhật sản phẩm tại đây</h2>
         <div class="name-product">
             <label for="name-product">Tên sản phẩm</label>
             <input value="<?php echo $row['product_name'] ?>" id="name-product" name="product-name" type="text" placeholder="Nhập tên sản phẩm">
@@ -148,7 +148,7 @@ if(isset($_POST['product-name']) && isset($_FILES['image-file']) && isset($_POST
         </div>
         <div class="mota">
             <label for="mota">Mô tả sẩn phẩm</label>
-            <textarea name="mota" id="mota" cols="30" rows="10" placeholder="Mô tả sản phẩm"><?php echo $row['description'] ?></textarea>
+            <textarea name="mota" id="mota" cols="30" rows="35" placeholder="Mô tả sản phẩm"><?php echo $row['description'] ?></textarea>
         </div>
         <select name="category-id" id="category-id">
             <?php 
@@ -164,5 +164,20 @@ if(isset($_POST['product-name']) && isset($_FILES['image-file']) && isset($_POST
             <button>Cập nhật</button>
         </div>
     </form>
+    <script src="https://cdn.tiny.cloud/1/lm94w71x7bk3e924wuj5c0cooyi12egh4anvtmqxxviltkd4/tinymce/6/tinymce.min.js" referrerpolicy="origin"></script>
+    <script>
+        tinymce.init({
+        selector: 'textarea',
+        plugins: 'ai tinycomments mentions anchor autolink charmap codesample emoticons image link lists media searchreplace table visualblocks wordcount checklist mediaembed casechange export formatpainter pageembed permanentpen footnotes advtemplate advtable advcode editimage tableofcontents mergetags powerpaste tinymcespellchecker autocorrect a11ychecker typography inlinecss textcolor backgroundcolor',
+        toolbar: 'undo redo | blocks fontfamily fontsize | bold italic underline strikethrough image forecolor backcolor| link media table mergetags | align lineheight | tinycomments | checklist numlist bullist indent outdent | emoticons charmap | removeformat',
+        tinycomments_mode: 'embedded',
+        tinycomments_author: 'Author name',
+        mergetags_list: [
+            { value: 'First.Name', title: 'First Name' },
+            { value: 'Email', title: 'Email' },
+        ],
+        ai_request: (request, respondWith) => respondWith.string(() => Promise.reject("See docs to implement AI Assistant"))
+        });
+    </script>
 </body>
 </html>

@@ -25,13 +25,18 @@ $results = mysqli_query($conn,'SELECT * FROM products AS p INNER JOIN categories
             text-decoration: none;
         }
 
+        img{
+            width: 100%;
+        }
+
         th{
             background-color: #1b74e4;
             color: #fff;
         }
 
-        td:nth-child(4),
-        td:nth-child(5){
+        td:nth-child(3),
+        td:nth-child(5),
+        td:nth-child(6){
             width: 70px;
         }
 
@@ -40,24 +45,24 @@ $results = mysqli_query($conn,'SELECT * FROM products AS p INNER JOIN categories
             border: 2px solid #CCC;
         }
 
-        td:nth-child(1), td:nth-child(3){
+        td:nth-child(1), td:nth-child(4){
             width: 60px;
             text-align: center;
         }
         
-        td:nth-child(5) a{
+        td:nth-child(6) a{
             color: #188038;
         }
 
-        td:nth-child(6) a{
+        td:nth-child(7) a{
             color: red;
         }
 
-        td:nth-child(4){
+        td:nth-child(5){
             width: 200px;
         }
 
-        td:nth-child(5),td:nth-child(6){
+        td:nth-child(6),td:nth-child(7){
             width: 100px;
             text-align: center;
         }
@@ -91,20 +96,22 @@ $results = mysqli_query($conn,'SELECT * FROM products AS p INNER JOIN categories
         <tr>
             <th>Id</th>
             <th>Product name</th>
-            <th>Categoryid</th>
-            <th>Category</th>
+            <th>Image</th>
+            <th>Category id</th>
+            <th>Category name</th>
             <th colspan="2">Action</th>
         </tr>
-        <?php while($row = mysqli_fetch_assoc($results)){
-            echo "<tr>
-                    <td>" . $row["product_id"] . "</td>
-                    <td>" . $row["product_name"] . "</td>
-                    <td>" . $row["category_id"] . "</td>
-                    <td>" . $row["category_name"] . "</td>
-                    <td><a href='updateProduct.php?product_id=".$row['product_id']."'><i class='fas fa-pencil-alt'></i> Sửa</a></td>
-                    <td><a href='deleteProduct.php?product_id=".$row['product_id']."'> <i class='fas fa-trash'></i> Xóa</a></td>    
-                </tr>";
-        } ?>
+        <?php while($row = mysqli_fetch_assoc($results)){?>
+                <tr>
+                    <td><?php echo $row["product_id"] ?></td>
+                    <td><?php echo $row["product_name"] ?></td>
+                    <td><img src="<?php echo $row["image_url"] ?>" alt=""></td>
+                    <td><?php echo $row["category_id"] ?></td>
+                    <td><?php echo $row["category_name"] ?></td>
+                    <td><a href='updateProduct.php?product_id="<?php echo $row['product_id'] ?>"'><i class='fas fa-pencil-alt'></i> Sửa</a></td>
+                    <td><a href='deleteProduct.php?product_id="<?php echo $row['product_id'] ?>"'> <i class='fas fa-trash'></i> Xóa</a></td>    
+                </tr>
+        <?php } ?>
     </table>
 </body>
 </html>

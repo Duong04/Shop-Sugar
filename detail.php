@@ -95,9 +95,15 @@ if (isset($_GET['product_id'])) {
                     </div>
                     <div class="product-info">
                         <h2>Thông tin sản phẩm</h2>
-                        <?php
-                        echo $description;
-                        ?>
+                        <div class="description">
+                            <?php
+                               echo $description;
+                            ?>
+                            <div class="before"></div>
+                        </div>
+                        <div class="btn-view-all">
+                            <button>Xem thêm</button>
+                        </div>
                     </div>
                 </article>
                 <aside>
