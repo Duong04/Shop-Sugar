@@ -108,8 +108,8 @@ $results = mysqli_query($conn,'SELECT * FROM products AS p INNER JOIN categories
                     <td><img src="<?php echo $row["image_url"] ?>" alt=""></td>
                     <td><?php echo $row["category_id"] ?></td>
                     <td><?php echo $row["category_name"] ?></td>
-                    <td><a href='updateProduct.php?product_id="<?php echo $row['product_id'] ?>"'><i class='fas fa-pencil-alt'></i> Sửa</a></td>
-                    <td><a href='deleteProduct.php?product_id="<?php echo $row['product_id'] ?>"'> <i class='fas fa-trash'></i> Xóa</a></td>    
+                    <td><a href='updateProduct.php?product_id=<?php echo $row['product_id'] ?>'><i class='fas fa-pencil-alt'></i> Sửa</a></td>
+                    <td><a href='deleteProduct.php?product_id=<?php echo $row['product_id'] ?>'> <i class='fas fa-trash'></i> Xóa</a></td>    
                 </tr>
         <?php } ?>
     </table>

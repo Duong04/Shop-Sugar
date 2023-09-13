@@ -7,7 +7,7 @@ if(isset($_GET['product_id'])){
 $results =  mysqli_query($conn,"select * from products where product_id=$id");
 $row = mysqli_fetch_assoc($results);
 
-if(isset($_POST['product-name']) && isset($_FILES['image-file']) && isset($_POST['price']) && isset($_POST['old-price']) && isset($_POST['mota'])){
+if(isset($_POST['product-name']) && isset($_FILES['image-file']) && isset($_POST['price']) && isset($_POST['mota'])){
     $picture = $_FILES['image-file'];
     $path = './uploadFiles';
     $productname = $_POST['product-name'];

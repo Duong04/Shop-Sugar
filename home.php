@@ -99,7 +99,7 @@ session_start();
                                 <span><?php echo $productname ?></span>
                                 <div class="sale-price">
                                     <span class="price"><?php echo $formattedPrice ?></span>
-                                    <div class="sale"><?php echo $saleInt ?></div>
+                                    <div><?php $saleMain = $oldprice > 0 ? '<div class="sale">'.$saleInt.'</div>' : ''; echo $saleMain ?></div>
                                 </div>
                             </div>
                             <div class="evaluate">
@@ -183,7 +183,7 @@ session_start();
                                 <span><?php echo $productname; ?></span>
                                 <div class="sale-price">
                                     <span class="price"><?php echo $formattedPrice ?></span>
-                                    <div class="sale"><?php echo $saleInt ?></div>
+                                    <div><?php $saleMain = $oldprice > 0 ? '<div class="sale">'.$saleInt.'</div>' : ''; echo $saleMain ?></div>
                                 </div>
                             </div>
                             <div class="evaluate-xiaomi">
@@ -271,7 +271,7 @@ session_start();
                                         <span><?php echo $product_name; ?></span>
                                         <div class="sale-price-phone">
                                             <span class="price-phone"><?php echo $formattedPrice; ?></span>
-                                            <span class="sale-phone"><?php echo $saleInt ?></span>      
+                                            <div><?php $saleMain = $oldprice > 0 ? '<div class="sale-phone">'.$saleInt.'</div>' : ''; echo $saleMain ?></div>
                                         </div>
                                     </div>
                                     <div class="evaluate-phone">
@@ -314,7 +314,7 @@ session_start();
                                         <span><?php echo $product_name; ?></span>
                                         <div class="sale-price-phone">
                                             <span class="price-phone"><?php echo $formattedPrice; ?></span>
-                                            <span class="sale-phone"><?php echo $saleInt ?></span>
+                                            <div><?php $saleMain = $oldprice > 0 ? '<div class="sale-phone">'.$saleInt.'</div>' : ''; echo $saleMain ?></div>
                                         </div>
                                     </div>
                                     <div class="evaluate-phone">
@@ -357,7 +357,7 @@ session_start();
                                         <span><?php echo $product_name; ?></span>
                                         <div class="sale-price-phone">
                                             <span class="price-phone"><?php echo $formattedPrice; ?></span>
-                                            <span class="sale-phone"><?php echo $saleInt ?></span>
+                                            <div><?php $saleMain = $oldprice > 0 ? '<div class="sale-phone">'.$saleInt.'</div>' : ''; echo $saleMain ?></div>
                                         </div>
                                     </div>
                                     <div class="evaluate-phone">

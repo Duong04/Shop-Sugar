@@ -1,15 +1,25 @@
-const btn = document.querySelector('.btn-view-all button');
-let description = document.querySelector('.description');
-let before = document.querySelector('.before');
+const btnOpen = document.querySelector('.btn-view-all button');
+const btnClose = document.querySelector('.btn-close');
+const bodyE = document.querySelector('body');
+const viewDescription = document.querySelector('.view-description');
+const descriptionAll = document.querySelector('.description-all');
 
-btn.addEventListener('click', () => {
-    description.classList.toggle('active');
-    
-    if (description.classList.contains('active')) {
-        before.style.display = 'none';
-        btn.innerText = 'Đóng';
-    } else {
-        before.style.display = 'block';
-        btn.innerText = 'Xem thêm';
-    }
-});
+function showDescription(){
+    viewDescription.classList.add('open');
+    bodyE.style.overflowY = 'hidden';
+}
+
+function hiddenDescription(){
+    viewDescription.classList.remove('open');
+    bodyE.style.overflowY = 'auto';
+}
+
+btnOpen.addEventListener('click', showDescription);
+
+btnClose.addEventListener('click', hiddenDescription);
+
+viewDescription.addEventListener('click', hiddenDescription);
+
+descriptionAll.addEventListener('click', (events) => {
+    events.stopPropagation();
+})

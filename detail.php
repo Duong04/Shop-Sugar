@@ -102,15 +102,15 @@ if (isset($_GET['product_id'])) {
                             <div class="before"></div>
                         </div>
                         <div class="btn-view-all">
-                            <button>Xem thêm</button>
+                            <button>Xem thêm <i class="fa-solid fa-caret-down fa-rotate-270"></i></button>
                         </div>
                     </div>
                 </article>
                 <aside>
                     <div class="price-product">
                         <div class="div1"><h3 id="price"><?php echo $formattedPrice ?></h3><sup>đ</sup></div>
-                        <div class="div2"><del id="old-price"><?php echo $formattedOldPrice ?></del><sup>đ</sup></div>
-                        <span id="percent"><?php echo $saleInt ?></span>
+                        <div class="div2"><del id="old-price"><?php $formattedOldPriceMain = $formattedOldPrice > 0 ? $formattedOldPrice.'<sup>đ</sup>' : ''; echo $formattedOldPriceMain ?></del></div>
+                        <span id="percent"><?php $saleMain = $old_price > 0 ? $saleInt : ''; echo $saleMain ?></span>
                     </div>
                     <div class="box-sale">
                         <div class="sale-title">
@@ -248,6 +248,16 @@ if (isset($_GET['product_id'])) {
         </footer>
         <div class="cap">
             <h5>© 2023 copy right duongntpd07645</h5>
+        </div>
+        <div class="view-description">
+            <div class="description-all">
+                <div class="description-child">
+                    <?php echo $description ?>
+                </div>
+            </div>
+            <div class="btn-close">
+                <button><i class="fa-solid fa-x"></i> Đóng</button>
+            </div>
         </div>
     </main>
     <script

@@ -137,8 +137,8 @@ session_start();
                                     <span><?php echo $info2 ?></span>
                                 </div>
                                 <div class="old-price">
-                                    <del><?php echo $formattedOldPrice ?><sup>đ</sup></del>
-                                    <span><?php echo $saleInt; ?></span>
+                                    <del><?php $formattedOldPriceMain =  $formattedOldPrice > 0 ? $formattedOldPrice : ''; echo $formattedOldPriceMain ?></del>
+                                    <span><?php $saleMain = $oldprice > 0 ? $saleInt : ''; echo $saleMain ?></span>
                                 </div>
                                 <div class="price">
                                     <h6><?php echo $formattedPrice ?><sup>đ</sup></h6>
@@ -202,8 +202,8 @@ session_start();
                                         <span><?php echo $info2 ?></span>
                                     </div>
                                     <div class="old-price">
-                                        <del><?php echo $formattedOldPrice ?><sup>đ</sup></del>
-                                        <span><?php echo $saleInt ?></span>
+                                        <del><?php $formattedOldPriceMain =  $formattedOldPrice > 0 ? $formattedOldPrice : ''; echo $formattedOldPriceMain ?></del>
+                                        <span><?php $saleMain = $oldprice > 0 ? $saleInt : ''; echo $saleMain ?></span>
                                     </div>
                                     <div class="price">
                                     <h6><?php echo $formattedPrice ?><sup>đ</sup></h6>
@@ -247,9 +247,17 @@ session_start();
                             $images = $row['image_url'];
                             $productname = $row['product_name'];
                             $price = $row['price'];
+                            $oldprice = $row['old_price'];
                             $info1 = $row['info1'];
                             $info2 = $row['info2'];
                             $formattedPrice = number_format($price, 0, ',', '.');
+                            $formattedOldPrice = number_format($oldprice, 0, ',', '.');
+                            if ($oldprice != 0) {
+                                $sale = ((($price - $oldprice ) / $oldprice) * 100);
+                            } else {
+                                $sale = "";
+                            }
+                            $saleInt = round(intval($sale),2)."%";
                         ?>
                         <div class="mac-item">
                             <span>Trả góp 0%</span>
@@ -261,6 +269,10 @@ session_start();
                                 <div class="mac-detail">
                                     <span><?php echo $info1; ?></span>
                                     <span><?php echo $info1; ?></span>
+                                </div>
+                                <div class="old-price">
+                                    <del><?php $formattedOldPriceMain =  $formattedOldPrice > 0 ? $formattedOldPrice : ''; echo $formattedOldPriceMain ?></del>
+                                    <span><?php $saleMain = $oldprice > 0 ? $saleInt : ''; echo $saleMain ?></span>
                                 </div>
                                 <div class="price">
                                     <h6><?php echo $formattedPrice; ?><sup>đ</sup></h6>
@@ -327,8 +339,8 @@ session_start();
                                     <span><?php echo $info2; ?></span>
                                 </div>
                                 <div class="old-price">
-                                    <del><?php echo $formattedOldPrice; ?><sup>đ</sup></del>
-                                    <span><?php echo $saleInt; ?></span>
+                                    <del><?php $formattedOldPriceMain =  $formattedOldPrice > 0 ? $formattedOldPrice : ''; echo $formattedOldPriceMain ?></del>
+                                    <span><?php $saleMain = $oldprice > 0 ? $saleInt : ''; echo $saleMain ?></span>
                                 </div>
                                 <div class="price">
                                     <h6><?php echo $formattedPrice; ?><sup>đ</sup></h6>
@@ -391,9 +403,9 @@ session_start();
                                             <div class="name-product">
                                                 <h4><?php echo $productname; ?></h4>
                                             </div>
-                                            <div class="old-price-product">
-                                                <del><?php echo $formattedOldPrice; ?><sup>đ</sup></del>
-                                                <span><?php echo $saleInt; ?></span>
+                                            <div class="old-price">
+                                                <del><?php $formattedOldPriceMain =  $formattedOldPrice > 0 ? $formattedOldPrice : ''; echo $formattedOldPriceMain ?></del>
+                                                <span><?php $saleMain = $oldprice > 0 ? $saleInt : ''; echo $saleMain ?></span>
                                             </div>
                                             <div class="product-price">
                                                 <h4><?php echo $formattedPrice; ?><sup>đ</sup></h4>
