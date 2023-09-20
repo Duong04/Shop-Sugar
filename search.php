@@ -1,6 +1,6 @@
 <?php
 session_start();
-require('connect.php');
+require('./sql/connect.php');
 if(isset($_GET['search'])){
     $searchData = $_GET['search'];
     $results = mysqli_query($conn, "SELECT * FROM products INNER JOIN categories ON products.category_id = categories.category_id WHERE product_name LIKE '%$searchData%' or category_name LIKE '%$searchData%'");
@@ -11,8 +11,9 @@ if(isset($_GET['search'])){
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SUGAR PHONE</title>
+    <title>SUGAR MOBILE</title>
+    <link rel="icon" href="./assets/img/logo/logo2.png" type="image/x-icon">
+    <link rel="icon" href="./assets/img/iphone-afraid.png" type="image/x-icon">
     <link rel="stylesheet" href="./assets/fonts/fontawesome-free-6.2.1-web/css/all.min.css">
     <link rel="stylesheet" href="./assets/css/search.css">
     <link rel="stylesheet" href="./assets/css/header.css">
@@ -56,11 +57,11 @@ if(isset($_GET['search'])){
                             <span><?php echo $info2; ?></span>
                         </div>
                         <div class="old-price">
-                            <del><?php echo $formattedOldPrice; ?><sup>đ</sup></del>
-                            <span><?php echo $saleInt; ?></span>
+                            <del><?php $formattedOldPriceMain =  $formattedOldPrice > 0 ? $formattedOldPrice.'<sup>đ</sup>' : ''; echo $formattedOldPriceMain ?></del>
+                            <span><?php $saleMain = $oldprice > 0 ? $saleInt : ''; echo $saleMain ?></span>
                         </div>
                         <div class="price">
-                            <h6><sup><?php echo $formattedPrice; ?></sup>đ</h6>
+                            <h6><?php echo $formattedPrice; ?><sup>đ</sup></h6>
                         </div>
                         <div class="evaluate">
                             <span class="sp1">

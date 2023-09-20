@@ -1,5 +1,5 @@
 <?php 
-require('connect.php');
+require('./sql/connect.php');
 session_start();
 
 if (isset($_GET['product_id'])) {
@@ -25,7 +25,8 @@ if (isset($_GET['product_id'])) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SUGAR PHONE</title>
+    <title>SUGAR MOBILE</title>
+    <link rel="icon" href="./assets/img/logo/logo2.png" type="image/x-icon">
     <link rel="stylesheet" href="./assets/fonts/fontawesome-free-6.2.1-web/css/all.min.css">
     <link
         rel="stylesheet"
@@ -214,11 +215,11 @@ if (isset($_GET['product_id'])) {
                         <div class="product-name"><h6><?php echo $productname; ?></h6></div>
                         <div class="product-detail">
                             <span><?php echo $info1; ?></span>
-                            <span><?php echo $info1; ?></span>
+                            <span><?php echo $info2; ?></span>
                         </div>
                         <div class="old-price">
-                            <del><?php echo $formattedOldPrice; ?><sup>đ</sup></del>
-                            <span><?php echo $saleInt; ?></span>
+                            <del><?php $formattedOldPriceMain =  $formattedOldPrice > 0 ? $formattedOldPrice.'<sup>đ</sup>' : ''; echo $formattedOldPriceMain ?></del>
+                            <span><?php $saleMain = $oldprice > 0 ? $saleInt : ''; echo $saleMain ?></span>
                         </div>
                         <div class="price">
                             <h6><?php echo $formattedPrice; ?><sup>đ</sup></h6>

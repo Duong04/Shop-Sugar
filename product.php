@@ -1,5 +1,5 @@
 <?php 
-require('connect.php');
+require('./sql/connect.php');
 session_start(); 
 ?>
 <!DOCTYPE html>
@@ -7,7 +7,8 @@ session_start();
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SUGAR PHONE</title>
+    <title>SUGAR MOBILE</title>
+    <link rel="icon" href="./assets/img/logo/logo2.png" type="image/x-icon">
     <link rel="stylesheet" href="./assets/fonts/fontawesome-free-6.2.1-web/css/all.min.css">
     <link
         rel="stylesheet"
@@ -137,7 +138,7 @@ session_start();
                                     <span><?php echo $info2 ?></span>
                                 </div>
                                 <div class="old-price">
-                                    <del><?php $formattedOldPriceMain =  $formattedOldPrice > 0 ? $formattedOldPrice : ''; echo $formattedOldPriceMain ?></del>
+                                    <del><?php $formattedOldPriceMain =  $formattedOldPrice > 0 ? $formattedOldPrice.'<sup>đ</sup>' : ''; echo $formattedOldPriceMain ?></del>
                                     <span><?php $saleMain = $oldprice > 0 ? $saleInt : ''; echo $saleMain ?></span>
                                 </div>
                                 <div class="price">
@@ -202,7 +203,7 @@ session_start();
                                         <span><?php echo $info2 ?></span>
                                     </div>
                                     <div class="old-price">
-                                        <del><?php $formattedOldPriceMain =  $formattedOldPrice > 0 ? $formattedOldPrice : ''; echo $formattedOldPriceMain ?></del>
+                                        <del><?php $formattedOldPriceMain =  $formattedOldPrice > 0 ? $formattedOldPrice.'<sup>đ</sup>' : ''; echo $formattedOldPriceMain ?></del>
                                         <span><?php $saleMain = $oldprice > 0 ? $saleInt : ''; echo $saleMain ?></span>
                                     </div>
                                     <div class="price">
@@ -271,7 +272,7 @@ session_start();
                                     <span><?php echo $info1; ?></span>
                                 </div>
                                 <div class="old-price">
-                                    <del><?php $formattedOldPriceMain =  $formattedOldPrice > 0 ? $formattedOldPrice : ''; echo $formattedOldPriceMain ?></del>
+                                    <del><?php $formattedOldPriceMain =  $formattedOldPrice > 0 ? $formattedOldPrice.'<sup>đ</sup>' : ''; echo $formattedOldPriceMain ?></del>
                                     <span><?php $saleMain = $oldprice > 0 ? $saleInt : ''; echo $saleMain ?></span>
                                 </div>
                                 <div class="price">
@@ -339,7 +340,7 @@ session_start();
                                     <span><?php echo $info2; ?></span>
                                 </div>
                                 <div class="old-price">
-                                    <del><?php $formattedOldPriceMain =  $formattedOldPrice > 0 ? $formattedOldPrice : ''; echo $formattedOldPriceMain ?></del>
+                                    <del><?php $formattedOldPriceMain =  $formattedOldPrice > 0 ? $formattedOldPrice.'<sup>đ</sup>' : ''; echo $formattedOldPriceMain ?></del>
                                     <span><?php $saleMain = $oldprice > 0 ? $saleInt : ''; echo $saleMain ?></span>
                                 </div>
                                 <div class="price">
@@ -404,7 +405,7 @@ session_start();
                                                 <h4><?php echo $productname; ?></h4>
                                             </div>
                                             <div class="old-price">
-                                                <del><?php $formattedOldPriceMain =  $formattedOldPrice > 0 ? $formattedOldPrice : ''; echo $formattedOldPriceMain ?></del>
+                                                <del><?php $formattedOldPriceMain =  $formattedOldPrice > 0 ? $formattedOldPrice.'<sup>đ</sup>' : ''; echo $formattedOldPriceMain ?></del>
                                                 <span><?php $saleMain = $oldprice > 0 ? $saleInt : ''; echo $saleMain ?></span>
                                             </div>
                                             <div class="product-price">

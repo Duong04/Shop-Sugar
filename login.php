@@ -1,6 +1,6 @@
 <?php 
 session_start();
-require('connect.php');
+require('./sql/connect.php');
 if (isset($_POST['email']) && isset($_POST['psw'])){
     $email = $_POST["email"];
     $password = $_POST["psw"];
@@ -14,7 +14,7 @@ if (isset($_POST['email']) && isset($_POST['psw'])){
                 $_SESSION['username'] = $user['username'];
                 $_SESSION['role'] = $user['role'];
                 $_SESSION['user_id'] = $user['user_id'];
-                header("Location: home.php");
+                header("Location: index.php");
                 mysqli_close($conn);
             } else {
                 $erorr = "Mật khẩu không đúng.";
@@ -32,7 +32,8 @@ if (isset($_POST['email']) && isset($_POST['psw'])){
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SUGAR PHONE</title>
+    <title>SUGAR MOBILE</title>
+    <link rel="icon" href="./assets/img/logo/logo2.png" type="image/x-icon">
     <link rel="stylesheet" href="./assets/fonts/fontawesome-free-6.2.1-web/css/all.min.css">
     <link rel="stylesheet" href="./assets/css/login.css">
     <link rel="stylesheet" href="./assets/css/header.css">

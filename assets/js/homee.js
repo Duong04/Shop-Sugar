@@ -7,9 +7,8 @@ btnClick.forEach((tab,index) =>{
         document.querySelector('.none.active').classList.remove('active');
         this.classList.add('active');
         page[index].classList.add('active');
-        
     }
-} )
+} );
 
 window.addEventListener('scroll', function() {
     var scrollToTopButton = document.getElementById('scroll');

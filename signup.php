@@ -1,6 +1,6 @@
 <?php
 session_start();
-require('connect.php');
+require('./sql/connect.php');
 if(isset($_POST['email']) && isset($_POST['psw']) && isset($_POST['confirm-psw']) && isset($_POST['name'])) {
     $name = $_POST['name'];
     $email = $_POST['email'];
@@ -39,7 +39,8 @@ if(isset($_POST['email']) && isset($_POST['psw']) && isset($_POST['confirm-psw']
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SUGAR PHONE</title>
+    <title>SUGAR MOBILE</title>
+    <link rel="icon" href="./assets/img/logo/logo2.png" type="image/x-icon">
     <link rel="stylesheet" href="./assets/fonts/fontawesome-free-6.2.1-web/css/all.min.css">
     <link rel="stylesheet" href="./assets/css/signup.css">
     <link rel="stylesheet" href="./assets/css/header.css">

@@ -1,6 +1,6 @@
             <nav>
                 <div class="logo">
-                    <a href="./home.php"><img src="./assets/img/logo/logo2.png" alt=""></a>
+                    <a href="./index.php"><img src="./assets/img/logo/logo2.png" alt=""></a>
                 </div>
                 <div class="search-menu">
                     <div class="search-menu-item">
@@ -22,18 +22,24 @@
                             </div>
                             <div class="cart">
                                 <a href="./cart.php"><i class="fa-solid fa-cart-shopping"></i> Giỏ hàng</a>
-                                <span class="number-cart">
-                                    <?php
-                                    $cartItemCount = isset($_SESSION['cart']) ? count($_SESSION['cart']) : 0;
-                                    echo $cartItemCount;
-                                    ?>
-                                </span>
+                                <div class="cart-item"> 
+                                        <?php
+                                        $countCart = 0;
+
+                                        if (isset($_SESSION['cart'])) {
+                                            $countCart = count($_SESSION['cart']); 
+                                        }
+                                        
+                                        $cartItemCount = $countCart > 0 ? '<span class="number-cart">' . $countCart . '</span>' : '';
+                                        echo $cartItemCount;
+                                        ?>
+                                </div>
                             </div>
                         </div>
                     </div>
                     <menu>
                         <ul class="menu">
-                            <li><a href="./home.php">Trang chủ</a></li>
+                            <li><a href="./index.php">Trang chủ</a></li>
                             <li><a href="./product.php">Sản phẩm</a></li>
                             <li><a href="">Liên hệ</a></li>
                             <li><a href="">Tin tức</a></li>
@@ -62,7 +68,7 @@
                         if (isset($_SESSION['role']) && $_SESSION['role'] == 'admin') {
                         ?>
                         <div class="admin">
-                            <a href="admin.php">admin</a>
+                            <a href="./admin/index.php">admin</a>
                         </div>
                         <?php } ?>
                 </div>

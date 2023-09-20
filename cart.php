@@ -1,5 +1,5 @@
 <?php 
-require('connect.php');
+require('./sql/connect.php');
 session_start();
 if (isset($_POST['add-cart'])) {
     $product_id = $_POST['product_id'];
@@ -28,7 +28,8 @@ if (isset($_POST['add-cart'])) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SUGAR PHONE</title>
+    <title>SUGAR MOBILE</title>
+    <link rel="icon" href="./assets/img/logo/logo2.png" type="image/x-icon">
     <link rel="stylesheet" href="./assets/fonts/fontawesome-free-6.2.1-web/css/all.min.css">
     <link rel="stylesheet" href="./assets/css/cart.css">
     <link rel="stylesheet" href="./assets/css/header.css">
@@ -111,7 +112,7 @@ if (isset($_POST['add-cart'])) {
                     </div>
                     <p>Không có sản phẩm nào trong giỏ hàng</p>
                     <div class="return-home">
-                        <a href="home.php">Quay về trang chủ</a>
+                        <a href="index.php">Quay về trang chủ</a>
                     </div>
                 </div>
                 <?php } ?>
