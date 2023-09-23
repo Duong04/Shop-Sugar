@@ -36,6 +36,9 @@ if (isset($_GET['product_id'])) {
     <link rel="stylesheet" href="./assets/css/details.css">
     <link rel="stylesheet" href="./assets/css/header.css">
     <link rel="stylesheet" href="./assets/css/footer.css">
+    <link rel="stylesheet" href="./responsive/header.css">
+    <link rel="stylesheet" href="./responsive/footer.css">
+    <link rel="stylesheet" href="./responsive/detail.css">
 </head>
 <body>
     <main>
@@ -44,6 +47,11 @@ if (isset($_GET['product_id'])) {
         </header>
         <div class="container">
             <h2 id="title-product"><?php echo $row['product_name'] ?></h2>
+            <div class="price-product-mobile">
+                <div class="div1"><h3 id="price"><?php echo $formattedPrice ?></h3><sup>đ</sup></div>
+                <div class="div2"><del id="old-price"><?php $formattedOldPriceMain = $formattedOldPrice > 0 ? $formattedOldPrice.'<sup>đ</sup>' : ''; echo $formattedOldPriceMain ?></del></div>
+                <span id="percent"><?php $saleMain = $old_price > 0 ? $saleInt : ''; echo $saleMain ?></span>
+            </div>
             <hr>
             <div class="container-child">
                 <article>
@@ -275,5 +283,6 @@ if (isset($_GET['product_id'])) {
     ></script>
     <script src="./assets/js/jquery.js"></script>
     <script src="./assets/js/details.js"></script>
+    <script src="./assets/js/header.js"></script>
 </body>
 </html>

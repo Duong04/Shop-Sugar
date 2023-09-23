@@ -1,0 +1,65 @@
+/* Tablet */
+@media  (min-width: 48em) and (max-width: 63.9375em) {
+    .footer-item{
+        width: 730px;
+        flex-wrap: wrap;
+    }
+    .switch-help{
+        width: 40%;
+    }
+
+    .certification{
+        width: 30%;
+    }
+
+    .chung-nhan{
+        width: 20%;
+    }
+
+    .pay{
+        width: 50%;
+    }
+
+}
+
+/* all mobile */
+@media (max-width: 47.9375em){
+    .footer-item{
+        width: 90%;
+        flex-wrap: wrap;
+    }
+    .switch-help{
+        width: 250px;
+    }
+
+    .certification{
+        width: 220px;
+    }
+
+    .chung-nhan{
+        width: 150px;
+    }
+
+    .pay{
+        width: 300px;
+    }
+}
+
+/* Mobile */
+@media  (min-width: 30em) and (max-width: 47.9375em) {
+
+}
+
+/* Mobile small */
+@media (max-width: 29.9375em){
+    .footer-item{
+        flex-direction: column;
+    }
+
+    .pay,
+    .chung-nhan,
+    .certification,
+    .switch-help{
+        width: 90%;
+    }
+}

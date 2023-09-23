@@ -131,7 +131,6 @@ header{
 .link-info{
     width: 100%;
     margin-top: 30px;
-    
 }
 
 .link-info-product{
@@ -324,6 +323,8 @@ article{
     width: 90%;
     margin: auto;
     margin-top: 7px;
+    display: flex;
+    gap: 5px;
 }
 
 .deal-detail{

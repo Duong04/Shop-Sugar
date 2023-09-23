@@ -18,6 +18,9 @@ session_start();
     <link rel="stylesheet" href="./assets/css/product.css">
     <link rel="stylesheet" href="./assets/css/header.css">
     <link rel="stylesheet" href="./assets/css/footer.css">
+    <link rel="stylesheet" href="./responsive/header.css">
+    <link rel="stylesheet" href="./responsive/footer.css">
+    <link rel="stylesheet" href="./responsive/product.css">
 </head>
 <body>
     <main>
@@ -157,7 +160,7 @@ session_start();
                             </a>
                             <form action="cart.php" method="post">
                                 <input type="hidden" name="product_id" value="<?php echo $row['product_id']; ?>">
-                                <button name="add-cart" type="submit"><i class="fa-solid fa-cart-shopping"></i> Thêm vào giỏ hàng</button>
+                                <button name="add-cart" type="submit"><i class="fa-solid fa-cart-shopping"></i> <span>Thêm vào giỏ hàng</span></button>
                             </form>
                         </div>
                         <?php }; mysqli_free_result($results); ?>
@@ -222,7 +225,7 @@ session_start();
                                 </a>
                                 <form action="cart.php" method="post">
                                     <input type="hidden" name="product_id" value="<?php echo $row['product_id']; ?>">
-                                    <button name="add-cart" type="submit"><i class="fa-solid fa-cart-shopping"></i> Thêm vào giỏ hàng</button>
+                                    <button name="add-cart" type="submit"><i class="fa-solid fa-cart-shopping"></i> <span>Thêm vào giỏ hàng</span></button>
                                 </form>
                             </div>
                             <?php }; mysqli_free_result($results); ?>
@@ -291,7 +294,7 @@ session_start();
                             </a>
                             <form action="cart.php" method="post">
                                 <input type="hidden" name="product_id" value="<?php echo $row['product_id']; ?>">
-                                <button name="add-cart" type="submit"><i class="fa-solid fa-cart-shopping"></i> Thêm vào giỏ hàng</button>
+                                <button name="add-cart" type="submit"><i class="fa-solid fa-cart-shopping"></i> <span>Thêm vào giỏ hàng</span></button>
                             </form>
                         </div>
                         <?php }; mysqli_free_result($results); ?>
@@ -359,7 +362,7 @@ session_start();
                             </a>
                             <form action="cart.php" method="post">
                                 <input type="hidden" name="product_id" value="<?php echo $row['product_id']; ?>">
-                                <button name="add-cart" type="submit"><i class="fa-solid fa-cart-shopping"></i> Thêm vào giỏ hàng</button>
+                                <button name="add-cart" type="submit"><i class="fa-solid fa-cart-shopping"></i> <span>Thêm vào giỏ hàng</span></button>
                             </form>
                         </div>
                         <?php }; mysqli_free_result($results); ?>
@@ -414,7 +417,7 @@ session_start();
                                         </a>
                                         <form action="cart.php" method="post">
                                             <input type="hidden" name="product_id" value="<?php echo $row['product_id']; ?>">
-                                            <button name="add-cart" type="submit"><i class="fa-solid fa-cart-shopping"></i> Thêm vào giỏ hàng</button>
+                                            <button name="add-cart" type="submit"><i class="fa-solid fa-cart-shopping"></i> <span>Thêm vào giỏ hàng</span></button>
                                         </form>
                                     </div>
                                     <?php }; mysqli_free_result($results); ?>
@@ -477,5 +480,6 @@ session_start();
     ></script>
     <script src="./assets/js/jquery.js"></script>
     <script src="./assets/js/product.js"></script>
+    <script src="./assets/js/header.js"></script>
 </body>
 </html>

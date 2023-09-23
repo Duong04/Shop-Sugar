@@ -38,6 +38,9 @@ if (isset($_POST['email']) && isset($_POST['psw'])){
     <link rel="stylesheet" href="./assets/css/login.css">
     <link rel="stylesheet" href="./assets/css/header.css">
     <link rel="stylesheet" href="./assets/css/footer.css">
+    <link rel="stylesheet" href="./responsive/header.css">
+    <link rel="stylesheet" href="./responsive/footer.css">
+    <link rel="stylesheet" href="./responsive/login.css">
 </head>
 <body>
     <main>
@@ -96,5 +99,6 @@ if (isset($_POST['email']) && isset($_POST['psw'])){
         </div>
     </main>
     <script src="./assets/js/login.js"></script>
+    <script src="./assets/js/header.js"></script>
 </body>
 </html>

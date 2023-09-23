@@ -1,0 +1,16 @@
+/* Mobile small */
+@media (max-width: 29.9375em){
+    .form{
+        width: 90%;
+    }
+
+    .change{
+        left: 25px;
+    }
+}
+
+@media (max-width: 20.75em){
+    .change{
+        display: none;
+    }
+}

@@ -2,19 +2,41 @@
 session_start();
 if(isset($_POST['email']) && isset($_POST['name']) && isset($_POST['phone']) && isset($_POST['address'])){
     $to_Mail = $_POST['email'];
-    $subject = "Đơn hàng của bạn";
     $message = "Cảm ơn bạn đã mua hàng ở chúng tôi, sản phẩm bạn đã đặt:\n";
     foreach ($_SESSION['cart'] as $cart_item) {
         $productName = $cart_item['product_name'];
-        $message .= "- $productName\n";
+        $message .= "- <b>$productName</b>\n";
     }
-    $header = "From: shopsugar309@gmail.com";
-    if(mail($to_Mail,$subject,$message,$header)){
+    
+    require './PHPMailer/src/Exception.php';
+    require './PHPMailer/src/PHPMailer.php';
+    require './PHPMailer/src/SMTP.php';
+    $mail = new PHPMailer\PHPMailer\PHPMailer;
+
+    try {
+        $mail->isSMTP();                                            
+        $mail->Host       = 'smtp.gmail.com';                     
+        $mail->SMTPAuth   = true;                                   
+        $mail->Username   = 'tinhdz3092004@gmail.com';                    
+        $mail->Password   = 'goyc mujp vsqq xvqt';                               
+        $mail->SMTPSecure = 'ssl';            
+        $mail->Port       = 465;                                   
+                
+        //Recipients
+        $mail->CharSet = 'UTF-8';
+        $mail->setFrom('tinhdz3092004@gmail.com', 'Sugar mobile');
+        $mail->addAddress($to_Mail); 
+        $mail->isHTML(true);                            
+        $mail->Subject = 'Đơn hàng của bạn';
+        $mail->Body    = $message;
+        $mail->AltBody = $message;
+                
+        $mail->send();
         unset($_SESSION['cart']);
         header('location: cart.php');
-    } else {
-        echo 'Gửi thất bại!';
-    }
+    } catch (Exception $e) {
+        echo "Tạm thời không gửi mail được: {$mail->ErrorInfo}";
+    }        
 }
 
 if (isset($_SESSION['cart']) && is_array($_SESSION['cart']) && count($_SESSION['cart']) > 0) {
@@ -31,6 +53,9 @@ if (isset($_SESSION['cart']) && is_array($_SESSION['cart']) && count($_SESSION['
     <link rel="stylesheet" href="./assets/css/pay.css">
     <link rel="stylesheet" href="./assets/css/header.css">
     <link rel="stylesheet" href="./assets/css/footer.css">
+    <link rel="stylesheet" href="./responsive/header.css">
+    <link rel="stylesheet" href="./responsive/footer.css">
+    <link rel="stylesheet" href="./responsive/pay.css">
 </head>
 <body>
     <main>
@@ -113,50 +138,54 @@ if (isset($_SESSION['cart']) && is_array($_SESSION['cart']) && count($_SESSION['
                 </div>
             </article>
             <aside>
-                <div class="product">
-                    <?php
-                    foreach ($_SESSION['cart'] as $item) {
-                        $productPrice = $item['price'];
-                        $productname = $item['product_name'];
-                        $productImage = $item['image_url'];
-                        $totalPrice += $productPrice; 
-                    ?>
-                    <div class="product-item">
-                        <div class="product-img">
-                            <img src=<?php echo $productImage; ?> alt="">
-                            <span>1</span>
+                <div class="show-cart"><i class="fa-solid fa-cart-shopping"></i> Xem thông tin đơn hàng <i class="fa-solid fa-caret-down"></i></div>
+                <div class="hide-product">
+                    <div class="product">
+                        <?php
+                        foreach ($_SESSION['cart'] as $item) {
+                            $productPrice = $item['price'];
+                            $productname = $item['product_name'];
+                            $productImage = $item['image_url'];
+                            $totalPrice += $productPrice; 
+                        ?>
+                        <div class="product-item">
+                            <div class="product-img">
+                                <img src=<?php echo $productImage; ?> alt="">
+                                <span>1</span>
+                            </div>
+                            <div class="name-product">
+                                <h4><?php echo $productname; ?></h4>
+                            </div>
+                            <div class="price"><span><?php echo number_format($productPrice,0,',','.'); ?></span><sup>đ</sup></div>
                         </div>
-                        <div class="name-product">
-                            <h4><?php echo $productname; ?></h4>
+                        <?php } ?>
+                    </div>
+                    <div class="voucher">
+                        <form action="">
+                            <input type="text" placeholder="Mã giảm giá">
+                            <button>Sử dụng</button>
+                        </form>
+                    </div>
+                    <div class="prepare">
+                        <div class="price-product">
+                            <span>Tạm tính</span>
+                            <p><span><?php echo number_format($totalPrice,0,',','.'); ?></span><sup>đ</sup></p>
                         </div>
-                        <div class="price"><span><?php echo number_format($productPrice,0,',','.'); ?></span><sup>đ</sup></div>
+                        <div class="price-ship">
+                            <span>Tiền vận chuyển</span>
+                            <p><span>100.000</span><sup>đ</sup></p>
+                        </div>
+                    </div>
+                    <div class="sum-price">
+                        <span>Tổng cộng</span>
+                        <p><span><?php $num = $totalPrice + 100000; echo number_format($num,0,',','.'); ?></span><sup>đ</sup></p>
                     </div>
                     <?php } ?>
                 </div>
-                <div class="voucher">
-                    <form action="">
-                        <input type="text" placeholder="Mã giảm giá">
-                        <button>Sử dụng</button>
-                    </form>
-                </div>
-                <div class="prepare">
-                    <div class="price-product">
-                        <span>Tạm tính</span>
-                        <p><span><?php echo number_format($totalPrice,0,',','.'); ?></span><sup>đ</sup></p>
-                    </div>
-                    <div class="price-ship">
-                        <span>Tiền vận chuyển</span>
-                        <p><span>100.000</span><sup>đ</sup></p>
-                    </div>
-                </div>
-                <div class="sum-price">
-                    <span>Tổng cộng</span>
-                    <p><span><?php $num = $totalPrice + 100000; echo number_format($num,0,',','.'); ?></span><sup>đ</sup></p>
-                </div>
-                <?php } ?>
             </aside>
         </div>
     </main>
     <script src="./assets/js/pay.js"></script>
+    <script src="./assets/js/header.js"></script>
 </body>
 </html>

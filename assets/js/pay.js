@@ -21,3 +21,10 @@ payBank.addEventListener('click', function() {
     i2.className = "fa-solid fa-circle";
     i1.className = "fa-regular fa-circle";
 });
+
+
+const showCart = document.querySelector('.show-cart');
+const hideProduct = document.querySelector('.hide-product');
+showCart.onclick = function() {
+    hideProduct.classList.toggle('show-product');
+};

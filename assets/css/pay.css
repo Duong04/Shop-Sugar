@@ -74,7 +74,7 @@ article{
 }
 
 .content-article{
-    width: 600px;
+    width: 85%;
     padding-bottom: 70px;
 }
 
@@ -249,6 +249,11 @@ aside{
     width: 45%;
     height: auto;
     padding-top: 50px;
+}
+
+.show-cart{
+    color: var(--main-color);
+    display: none;
 }
 
 .product{

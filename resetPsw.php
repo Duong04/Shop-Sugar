@@ -28,6 +28,7 @@ if (isset($_POST['psw'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SUGAR MOBILE</title>
     <link rel="icon" href="./assets/img/logo/logo2.png" type="image/x-icon">
+    <link rel="stylesheet" href="./responsive/resetPsw.css">
     <style>
         *{
             padding: 0;

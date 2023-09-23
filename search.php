@@ -18,6 +18,9 @@ if(isset($_GET['search'])){
     <link rel="stylesheet" href="./assets/css/search.css">
     <link rel="stylesheet" href="./assets/css/header.css">
     <link rel="stylesheet" href="./assets/css/footer.css">
+    <link rel="stylesheet" href="./responsive/header.css">
+    <link rel="stylesheet" href="./responsive/footer.css">
+    <link rel="stylesheet" href="./responsive/search.css">
 </head>
 <body>
     <main>
@@ -91,5 +94,6 @@ if(isset($_GET['search'])){
             <h5>© 2023 copy right duongntpd07645</h5>
         </div>
     </main>
+    <script src="./assets/js/header.js"></script>
 </body>
 </html>

@@ -1,0 +1,256 @@
+/* Tablet */
+@media  (min-width: 48em) and (max-width: 63.9375em) {
+    nav{
+        width: 730px;
+    }
+
+    .logo{
+        width: 110px;
+    }
+
+    .signup-login-cart{
+        width: 45%;
+    }
+
+    .signup-login{
+        width: 65%;
+    }
+
+    .cart>a>span{
+        display: none;
+    }
+
+    .number-cart{
+        right: 23px;
+        padding: 3px 5px;
+    }
+
+    .menu{
+        width: 85%;
+    }
+
+    .logout{
+        top: 65px;
+    }
+
+}
+
+/* all mobile */
+@media (max-width: 47.9375em){
+    nav{
+        width: 95%;
+        height: 160px;
+        justify-content: space-between;
+        gap: 10px;
+    }
+
+    .logo{
+        width: 150px;
+    }
+
+    .menu{
+        display: none;
+    }
+    
+    .search-menu-item{
+        width: auto;
+        gap: 30px;
+    }
+
+    .search{
+        display: none;
+    }
+
+    .search-mobile{
+        display: block;
+        font-size: 1.2rem;
+    }
+
+    .signup-login-cart{
+        width: auto;
+        display: flex;
+        gap: 20px;
+    }
+    
+    .signup-login{
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        gap: 10px;
+    }
+    
+    .account{
+        width: auto;
+        margin-bottom: 20px;
+    }
+
+    .cart>a>span{
+        display: none;
+    }
+
+    .number-cart{
+        right: 23px;
+        padding: 3px 5px;
+    }
+
+    .nav-bar{
+        display: block;
+        padding: 5px;
+        margin-bottom: 88px;
+    }
+
+    .nav-bar:hover{
+        background-color: var(--white-color);
+        color: var(--main-color);
+    }
+
+    .nav-bar i{
+        font-size: 1.5rem;
+    }
+    
+    .menu-mobile{
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: 999;
+    }
+
+    .search-2,
+    .menu-2{
+        display: block;
+        padding-top: 40px;
+        position: fixed;
+        z-index: 9999;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        background-color: var(--white-color);
+        transform: translateX(-100%);
+        transition: transform 0.5s ease;
+    }
+
+    .menu-2 a{
+        display: block;
+        width: 100%;
+        padding: 10px;
+        font-size: 1.2rem;
+    }
+
+    .menu-2 a:hover{
+        background-color: var(--main-color);
+        color: var(--white-color);
+    }
+
+    .close-search,
+    .close{
+        position: absolute;
+        top: 0;
+        right: 0;
+        font-size: 1.0rem;
+        padding: 5px;
+        border: 1px solid #ccc;
+    }
+
+    .close-search:hover,
+    .close:hover{
+        opacity: 0.5;;
+    }
+
+    #nav-bar-block:checked ~ .menu-mobile{
+        display: block;
+    }
+
+    #nav-bar-block:checked ~ .menu-2{
+        transform: translateX(0);
+    }
+
+    .search-2{
+        width: 100%;
+        transform: translateY(-100%);
+    }
+
+    .search-2 h1{
+        margin-left: 20px;
+    }
+
+    .search-2 form{
+        width: 90%;
+        margin: 10px auto;
+        background-color: var(--white-color);
+        border: 2px solid #ccc;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .search-2 input{
+        width: 87%;
+        height: 40px;
+        background-color: var(--white-color);
+        padding-left: 10px;
+        border: none;
+    }
+
+    .search-2 input:focus{
+        outline: none;
+    }
+
+    .search-2 button{
+        width: 10%;
+        height: 40px;
+        background-color: var(--white-color);
+        border: none;
+    }
+
+    #search-block:checked ~ .search-2{
+        transform: translateY(0);
+    }
+
+}
+
+/* Mobile */
+@media  (min-width: 30em) and (max-width: 47.9375em) {
+    .search-menu{
+        width: 90%;
+        height: 100%;
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
+        align-items: end;
+    }
+
+    .menu-2{
+        width: 300px;
+    }
+
+}
+
+/* Mobile small */
+@media (max-width: 29.9375em){
+    .search-menu{
+        width: 80%;
+    }
+
+    .menu-2{
+        width: 100%;
+    }
+
+    .search-menu{
+        width: 90%;
+        height: 100%;
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
+        align-items: end;
+    }
+
+    .sign-up{
+        display: none;
+    }
+
+    .signup-login span{
+        display: none
+    }
+}

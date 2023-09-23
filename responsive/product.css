@@ -1,0 +1,184 @@
+/* Tablet */
+@media  (min-width: 48em) and (max-width: 63.9375em) {
+    /* banner */
+    .banner1{
+        width: 730px;
+    }
+
+    .link-info-item{
+        width: 730px;
+    }
+    /* article */
+    .brand-page,
+    #clock,
+    #tablet,
+    #macbook,
+    .gaming,
+    #phone{
+        width: 730px;
+    }
+
+    .deal-soc span {
+        font-size: 2.3rem;
+        left: 24%;
+        top: 5%;
+    }
+    
+    .product-item form span,
+    .deal-item form span{
+        display: none;
+    }
+
+    .slick-slide img{
+        width: 100%;
+    }
+
+    .technical-detail span,
+    .office-detail span,
+    .mac-detail span,
+    .gaming-detail span,
+    .deal-detail span{
+        padding: 3px;
+        font-size: 0.75rem;
+        background-color: #eaeaea;
+    }
+
+    .name-product h4 {
+        font-size: 0.9rem;
+    }
+
+    .product-price h4 {
+        font-size: 1.0rem;
+    }
+}
+
+/* all mobile */
+@media (max-width: 47.9375em){
+    /* banner */
+    .banner1{
+        width: 100%;
+    }
+    
+    .link-info-item{
+        overflow-x: auto;
+        width: 100%;
+        margin: auto;
+        justify-content: center;
+    }
+
+    .brand-page,
+    #macbook,
+    #phone{
+        width: 95%;
+    }
+    
+    .deal-soc span {
+        display: none;
+    }
+    
+    #clock,
+    #tablet,
+    .gaming{
+        width: 100%;
+    }
+
+    .gaming img{
+        width: 100%;
+        height: auto;
+    }
+    
+    .product-item form span{
+        display: none;
+    }
+
+    .name-product h4 {
+        font-size: 0.9rem;
+    }
+
+    .product-price h4 {
+        font-size: 1.0rem;
+    }
+    
+}
+
+@media (max-width: 37.6875em) and (min-width: 35.625em) {
+    .deal-item form span{
+        display: none;
+    }
+
+}
+
+/* Mobile */
+@media  (min-width: 30em) and (max-width: 47.9375em) {
+    .office-product,
+    .mac-product,
+    .gaming-product {
+        width: 95%;
+        margin: auto;
+        grid-template-columns: repeat(3, 32%);
+    }
+
+    .div2{
+        width: 100px;
+    }
+
+    .deal-item form span,
+    .technical-item form span, 
+    .office-item form span, 
+    .mac-item form span, 
+    .gaming-item form span {
+        display: none;
+    }
+}
+
+/* Mobile small */
+@media (max-width: 29.9375em){
+    .office-product,
+    .mac-product,
+    .gaming-product {
+        width: 95%;
+        margin: auto;
+        grid-template-columns: repeat(2, 47%);
+    }
+
+    .link-info-item{
+        width: 100%;
+        overflow-x: auto;
+        justify-content: start;
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+    }
+
+    .div2{
+        width: 100px;
+    }
+
+    .deal-item form span,
+    .technical-item form span, 
+    .office-item form span, 
+    .mac-item form span, 
+    .gaming-item form span {
+        display: none;
+    }
+
+    .name-product h4 {
+        font-size: 0.8rem;
+    }
+
+    .product-price h4 {
+        font-size: 0.9rem;
+    }
+
+    .brand-page h5 {
+        font-size: 1.1rem;
+    }
+}
+
+@media (max-width: 21.875em){
+    .office-product,
+    .mac-product,
+    .gaming-product {
+        grid-template-columns: repeat(1, 90%);
+        justify-content: center;
+    }
+}

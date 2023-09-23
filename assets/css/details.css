@@ -72,6 +72,10 @@ header{
     margin-bottom: 10px;
 }
 
+.price-product-mobile{
+    display: none;
+}
+
 .container-child{
     width: 100%;
     display: flex;
@@ -706,14 +710,14 @@ footer{
 }
 
 .description-all{
-    width: 1100px;
+    width: 1000px;
     height: auto;
     margin: auto;
     background-color: var(--white-color);
 }
 
 .description-child{
-    width: 60%;
+    width: 70%;
     margin: auto;
     padding: 100px 0;
     line-height: 25px;
@@ -740,6 +744,7 @@ footer{
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    border: 1px solid #ccc;
 }
 
 .btn-close button:hover{

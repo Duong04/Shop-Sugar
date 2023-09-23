@@ -14,10 +14,13 @@ session_start();
         rel="stylesheet"
         type="text/css"
         href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"
-      />
+    />
     <link rel="stylesheet" href="./assets/css/home.css">
     <link rel="stylesheet" href="./assets/css/header.css">
     <link rel="stylesheet" href="./assets/css/footer.css">
+    <link rel="stylesheet" href="./responsive/header.css">
+    <link rel="stylesheet" href="./responsive/footer.css">
+    <link rel="stylesheet" href="./responsive/home.css">
 </head>
 <body>
     <main>
@@ -444,5 +447,6 @@ session_start();
     ></script>
     <script src="./assets/js/jquery.js"></script>
     <script src="./assets/js/homee.js"></script>
+    <script src="./assets/js/header.js"></script>
 </body>
 </html>

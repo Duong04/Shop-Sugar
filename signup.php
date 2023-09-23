@@ -17,18 +17,40 @@ if(isset($_POST['email']) && isset($_POST['psw']) && isset($_POST['confirm-psw']
                   VALUES('$email','$name', '$hashedpsw', 'user', NOW(), 'Chưa kích hoạt')";    
         
             if(mysqli_query($conn, $query)) {
-                $to_Mail = $email;
-                $subject = 'Xác nhận đăng ký';
-                $message = 'Nhấn vào liên kết sau để xác nhận đăng ký: http://localhost/PHP/asgm/confirm.php';
-                $headers = "From: tinhdz3092004@gmail.com";
-                if (mail($to_Mail, $subject, $message, $headers)) {
-                    echo '<script>alert("Vui lòng check mail xác nhận để đăng ký hoàn tất")</script>';
+                
+                require './PHPMailer/src/Exception.php';
+                require './PHPMailer/src/PHPMailer.php';
+                require './PHPMailer/src/SMTP.php';
+                $mail = new PHPMailer\PHPMailer\PHPMailer;
+
+                try {
+                    $mail->isSMTP();                                            
+                    $mail->Host       = 'smtp.gmail.com';                     
+                    $mail->SMTPAuth   = true;                                   
+                    $mail->Username   = 'tinhdz3092004@gmail.com';                    
+                    $mail->Password   = 'goyc mujp vsqq xvqt';                               
+                    $mail->SMTPSecure = 'ssl';            
+                    $mail->Port       = 465;                                   
+                
+                    //Recipients
+                    $mail->CharSet = 'UTF-8';
+                    $mail->setFrom('tinhdz3092004@gmail.com', 'Sugar mobile');
+                    $mail->addAddress($email); 
+                    $mail->isHTML(true);                                  //Set email format to HTML
+                    $mail->Subject = 'Xác nhận đăng ký';
+                    $mail->Body    = 'Nhấp vào liên kết để kích hoạt tài khoản http://sugarmobile.online/confirm.php';
+                    $mail->AltBody = 'Nhấp vào liên kết để kích hoạt tài khoản http://sugarmobile.online/confirm.php';
+                
+                    $mail->send();
+                    echo "<script>alert('Vui lòng check mail để kích hoạt tài khoản');</script>";
+                } catch (Exception $e) {
+                    echo "Tạm thời không gửi mail được: {$mail->ErrorInfo}";
                 }
             } else {
                 $messages = 'Có lỗi xảy ra khi thêm dữ liệu';
             }
         } else {
-        $messages = 'mật khẩu không khớp mời bạn nhập lại';
+            $messages = 'mật khẩu không khớp mời bạn nhập lại';
         }
     }
 }
@@ -45,6 +67,9 @@ if(isset($_POST['email']) && isset($_POST['psw']) && isset($_POST['confirm-psw']
     <link rel="stylesheet" href="./assets/css/signup.css">
     <link rel="stylesheet" href="./assets/css/header.css">
     <link rel="stylesheet" href="./assets/css/footer.css">
+    <link rel="stylesheet" href="./responsive/header.css">
+    <link rel="stylesheet" href="./responsive/footer.css">
+    <link rel="stylesheet" href="./responsive/signup.css">
 </head>
 <body>
     <main>
@@ -115,5 +140,6 @@ if(isset($_POST['email']) && isset($_POST['psw']) && isset($_POST['confirm-psw']
         </div>
     </main>
     <script src="./assets/js/signup.js"></script>
+    <script src="./assets/js/header.js"></script>
 </body>
 </html>

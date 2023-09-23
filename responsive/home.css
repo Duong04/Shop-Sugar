@@ -1,0 +1,217 @@
+/* Tablet */
+@media  (min-width: 48em) and (max-width: 63.9375em) {
+    /* banner */
+    .banner{
+        height: auto;
+    }
+
+    .banner img{
+        height: 360px;
+        object-position: top center;
+    }
+
+    .slide-banner{
+        width: 730px;
+    }
+
+    /* article */
+    article{
+        width: 730px;
+    }
+
+    .section1-item a{
+        height: 90px;
+    }
+
+    .section1-item span{
+        font-size: 1.0rem;
+    }
+
+    .shopping-trend{
+        flex: wrap;
+        gap: 10px;
+    }
+
+    .shopping-trend-item a{
+        width: 380px;
+        height: 380px;
+        background-color: var(--white-color);
+    }
+
+    .p1{
+        bottom: 37px;
+        left: 20px;
+        font-size: 1.0rem;
+    }
+    
+    .p2{
+        bottom: 15px;
+        left: 20px;
+    }
+
+}
+
+/* all mobile */
+@media (max-width: 47.9375em){
+    /* Banner */
+    .banner{
+        height: auto;
+    }
+
+    .banner img{
+        height: 400px;
+        object-position: 70% 80%;
+    }
+
+    .slide-banner{
+        width: 90%;
+    }
+
+    /* Article */
+
+    article{
+        width: 90%;
+    }
+    
+    .section1-item a{
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        height: auto;
+        padding: 10px 0;
+        text-align: center;
+    }
+
+    .section1-item img{
+        width: 40%;
+    }
+
+    .section1-item span{
+        width: 90%;
+        font-size: 1.0rem;
+    }
+
+    /* section4 */
+
+    .shopping-trend-item a{
+        width: 100%;
+        background-color: var(--white-color);
+    }
+    
+    .p1{
+        bottom: 37px;
+        left: 20px;
+        font-size: 1.0rem;
+    }
+    
+    .p2{
+        bottom: 15px;
+        left: 20px;
+    }
+
+    .info-product-xiaomi>span,
+    .info-product>span,
+    .info-product-phone>span{
+        font-size: 0.9rem;
+    }
+
+    .sale-price-phone {
+        width: 95%;
+        justify-content: space-between;
+    }
+    
+    .price-phone .price-phone,
+    .sale-price .price,
+    .sale-price-phone .price-phone{
+        font-size: 1.0rem;
+    }
+
+    .sale-price .sale,
+    .sale-price .sale,
+    .sale-price-phone .sale-phone{
+        margin-left: 10px;
+        font-size: 0.75rem;
+    }
+    
+}
+
+/* Mobile */
+@media  (min-width: 30em) and (max-width: 47.9375em) {
+    .img-item{
+        width: 150px;
+    }
+
+    .shopping-trend{
+        grid-template-columns: repeat(2, 47%);
+        gap: 10px;
+    }
+
+    .shopping-trend-item a{
+        height: 400px;
+
+    }
+
+    .btn-click-item{
+        width: 32%;
+        height: auto;
+        padding: 10px 0;
+        flex-direction: column;
+    }
+
+    .btn-click-item img{
+        width: 30%;
+    }
+
+    .box-item-child{
+        grid-template-columns: repeat(3 , 32%);
+    }
+
+}
+
+/* Mobile small */
+@media (max-width: 29.9375em){
+    .section1-item span {
+        font-size: 0.9rem;
+    }
+
+    .section3 h3 {
+        font-size: 1.5rem;
+    }
+
+    .shopping-trend{
+        justify-content: center;
+        grid-template-columns: repeat(1, 90%);
+        gap: 10px;
+    }
+
+    .btn-click-item{
+        width: 32%;
+        height: auto;
+        padding: 10px 0;
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .btn-click-item img {
+        width: 30%;
+    }
+
+    .btn-click-item span {
+        font-size: 1.0rem;
+    }
+
+    .box-item-child{
+        grid-template-columns: repeat(2 , 47%);
+    }
+    
+    .section7 h3, .section6 h3 {
+        font-size: 1.1rem;
+    }
+}
+
+@media (max-width: 21.875em){
+    .box-item-child{
+        grid-template-columns: repeat(1 , 90%);
+        justify-content: center;
+    }
+}

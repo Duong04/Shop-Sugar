@@ -21,6 +21,10 @@ if (isset($_POST['add-cart'])) {
     
     $_SESSION['cart'][] = $cart_item;
 
+     $previous_page = $_SERVER['HTTP_REFERER'];
+    header('Location: ' . $previous_page);
+    exit();
+
 }
 ?>
 <!DOCTYPE html>
@@ -34,6 +38,9 @@ if (isset($_POST['add-cart'])) {
     <link rel="stylesheet" href="./assets/css/cart.css">
     <link rel="stylesheet" href="./assets/css/header.css">
     <link rel="stylesheet" href="./assets/css/footer.css">
+    <link rel="stylesheet" href="./responsive/header.css">
+    <link rel="stylesheet" href="./responsive/footer.css">
+    <link rel="stylesheet" href="./responsive/cart.css">
 </head>
 <body>
     <main>
@@ -70,7 +77,6 @@ if (isset($_POST['add-cart'])) {
                                             <h5><?php echo $item['product_name']; ?></h5>
                                             <div class="price">
                                                 <span class="new-price"><?php echo number_format($item['price'], 0, ',', '.'); ?><sup>đ</sup></span>
-                                                <del class="old-price"><?php echo number_format($item['old_price'], 0, ',', '.'); ?><sup>đ</sup></del>
                                             </div>
                                         </div>
                                     </td>
@@ -127,5 +133,6 @@ if (isset($_POST['add-cart'])) {
         </div>
     </main>
     <script src="./assets/js/cart.js"></script>
+    <script src="./assets/js/header.js"></script>
 </body>
 </html>

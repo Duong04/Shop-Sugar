@@ -1,0 +1,6 @@
+/* Mobile small */
+@media (max-width: 29.9375em){
+    .container .form {
+        width: 90% !important;
+    }
+}

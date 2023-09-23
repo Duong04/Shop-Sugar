@@ -1,0 +1,43 @@
+/* Tablet */
+@media  (min-width: 48em) and (max-width: 63.9375em) {
+    .main-form{
+        width: 730px;
+    }
+
+    .form-img{
+        width: 48%;
+        margin-top: 50px;
+    }
+
+    .form{
+        width: 50%;
+    }
+
+}
+
+/* all mobile */
+@media (max-width: 47.9375em){
+    .main-form{
+        width: 100%;
+    }
+
+    .form-img{
+        display: none;
+    }
+}
+
+/* Mobile */
+@media  (min-width: 30em) and (max-width: 47.9375em) {
+    .form{
+        width: 400px;
+        margin: auto;
+    }
+}
+
+/* Mobile small */
+@media (max-width: 29.9375em){
+    .form{
+        width: 90%;
+        margin: auto;
+    }
+}
