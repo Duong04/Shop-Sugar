@@ -1,5 +1,5 @@
 <?php 
-require('../sql/connect.php');
+require('./sql/connect.php');
 if(isset($_GET['product_id'])){
     $id = $_GET['product_id'];
 }
@@ -26,7 +26,7 @@ if(isset($_POST['product-name']) && isset($_FILES['image-file']) && isset($_POST
         $query = "UPDATE products SET product_name = '$productname', image_url = '$path/{$picture['name']}', price = $price,old_price = $oldprice,
         info1 = '$info', info2 = '$info2', description = '$description', category_id = $category_id, createdate = NOW() WHERE product_id = $id";
         if(mysqli_query($conn, $query)){
-            header('location: index.php');
+            header('location: products.php');
         }
     } else {
         echo 'Upload file không thành công!';

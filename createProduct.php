@@ -1,5 +1,5 @@
 <?php 
-require('../sql/connect.php');
+require('./sql/connect.php');
 if(isset($_POST['product-name']) && isset($_FILES['image-file']) && isset($_POST['price']) && isset($_POST['old-price']) && isset($_POST['mota'])){
     $picture = $_FILES['image-file'];
     $path = './uploadFiles';
@@ -19,7 +19,7 @@ if(isset($_POST['product-name']) && isset($_FILES['image-file']) && isset($_POST
         $query = "INSERT INTO products(product_name, image_url, price, old_price, createdate, event,info1,info2, description,category_id)
         VALUES('$productname', '$path/{$picture['name']}', $price, $oldprice, NOW(), '$event','$info','$info2','$description','$category_id')";
         if(mysqli_query($conn, $query)){
-            header('location: index.php');
+            header('location: products.php');
         }
     } else {
         echo 'Upload file không thành công!';
@@ -32,7 +32,7 @@ if(isset($_POST['product-name']) && isset($_FILES['image-file']) && isset($_POST
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SUGAR MOBILE</title>
-    <link rel="icon" href="../assets/img/logo/logo2.png" type="image/x-icon">
+    <link rel="icon" href="./assets/img/logo/logo2.png" type="image/x-icon">
     <style>
         *{
             margin: 0;

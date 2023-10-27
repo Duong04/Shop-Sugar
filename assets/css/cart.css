@@ -126,16 +126,21 @@ article{
 
 .cart-product th:nth-child(2),
 .cart-product td:nth-child(2){
+    text-align: center;
     width: 20%;
 }
 
 .cart-product th:nth-child(3),
 .cart-product td:nth-child(3){
-    width: 10%;
+    width: 20%;
 }
 
 .cart-product td:nth-child(3) button{
     border: none;
+}
+.cart-product td:nth-child(4),
+.cart-product th:nth-child(4){
+    padding-right: 15px;
 }
 
 .product-item{

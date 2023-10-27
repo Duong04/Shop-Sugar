@@ -1,5 +1,5 @@
 <?php 
-require('../sql/connect.php');
+require('./sql/connect.php');
 session_start();
 if(isset($_GET['category_id'])){
     $id = $_GET['category_id'];

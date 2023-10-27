@@ -1,18 +1,18 @@
 <?php
-require('../sql/connect.php');
-if(isset($_GET['category_id'])){
-    $id = $_GET['category_id'];
+require('./sql/connect.php');
+if(isset($_GET['news_id'])){
+    $id = $_GET['news_id'];
 }
 
 if(isset($_POST['submit'])){
     if($_POST['submit'] === 'xoa'){
-        if(mysqli_query($conn, "DELETE FROM categories WHERE category_id = $id")){
-            header("location: categories.php");
+        if(mysqli_query($conn, "DELETE FROM news WHERE news_id = $id")){
+            header("location: adNews.php");
         }else{
             echo 'Xóa không thành công';
         }
     }else{
-        header('location:categories.php');
+        header('location: adNews.php');
     }
 }
 ?>
@@ -22,7 +22,7 @@ if(isset($_POST['submit'])){
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SUGAR MOBILE</title>
-    <link rel="icon" href="../assets/img/logo/logo2.png" type="image/x-icon">
+    <link rel="icon" href="./assets/img/logo/logo2.png" type="image/x-icon">
     <style>
         form{
             width: 150px;

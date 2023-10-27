@@ -25,8 +25,8 @@ if(isset($_POST['email'])){
                 $mail->addAddress($email); 
                 $mail->isHTML(true);                            
                 $mail->Subject = 'Reset password';
-                $mail->Body    = 'Nhấn vào liên kết sau để đổi mật khẩu: http://sugarmobile.online/resetPsw.php?otp=' . $otp;
-                $mail->AltBody = 'Nhấn vào liên kết sau để đổi mật khẩu: http://sugarmobile.online/resetPsw.php?otp=' . $otp;
+                $mail->Body    = 'Nhấn vào liên kết sau để đổi mật khẩu: http://localhost/php/asgm/resetPsw.php?otp=' . $otp;
+                $mail->AltBody = 'Nhấn vào liên kết sau để đổi mật khẩu: http://localhost/php/asgm/resetPsw.php?otp=' . $otp;
                 
                 $mail->send();
                 echo "<script>alert('Vui lòng check mail để lấy mã otp đặt lại pass');</script>";

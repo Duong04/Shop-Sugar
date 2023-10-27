@@ -7,7 +7,7 @@
                         <label for="search-block" class="search-mobile"><i class="fa-solid fa-magnifying-glass"></i></label>
                         <div class="search">
                             <form action="search.php" method="GET">
-                                <input name="search" type="text" placeholder="Bạn muốn tìm gì...">
+                                <input name="search" required type="text" placeholder="Bạn muốn tìm gì...">
                                 <button><i class="fa-solid fa-magnifying-glass"></i></button>
                             </form>
                         </div>
@@ -46,8 +46,8 @@
                         <ul class="menu">
                             <li><a href="./index.php">Trang chủ</a></li>
                             <li><a href="./product.php">Sản phẩm</a></li>
+                            <li><a href="./news.php">Tin tức</a></li>
                             <li><a href="">Liên hệ</a></li>
-                            <li><a href="">Tin tức</a></li>
                             <li><a href="">Đơn hàng</a></li>
                         </ul>
                         <?php
@@ -63,11 +63,10 @@
                                 if (isset($_SESSION['role']) && $_SESSION['role'] == 'admin') {
                                 ?>
                                 <div class="admin-2">
-                                    <a href="./admin/index.php">admin</a>
+                                    <a href="./products.php">admin</a>
                                 </div>
                                 <?php } ?>
                                 <div class="logout-child">
-                                    
                                     <a href="logout.php"><i class="fa-solid fa-right-from-bracket"></i> Đăng xuất</a>
                                 </div>
                             </div>
@@ -97,7 +96,7 @@
                 <div class="search-2">
                     <h1>Tìm kiếm tại đây</h1>
                     <form action="search.php" method="GET">
-                        <input name="search" type="text" placeholder="Bạn muốn tìm gì...">
+                        <input name="search" type="text" required placeholder="Bạn muốn tìm gì...">
                         <button><i class="fa-solid fa-magnifying-glass"></i></button>
                     </form>
                     <label for="search-block" class="close-search"><i class="fa-solid fa-x"></i> Đóng</label>

@@ -1,14 +1,14 @@
 /* Tablet */
 @media  (min-width: 48em) and (max-width: 63.9375em) {
     article{
-        width: 730px;
+        width: 730px !important;
     }
 }
 
 /* all mobile */
 @media (max-width: 47.9375em){
     article{
-        width: 100%;
+        width: 100% !important;
     }
     article h1{
         width: 90%;
@@ -17,9 +17,9 @@
 }
 
 /* Mobile */
-@media (max-width: 47.9375em){
+@media  (min-width: 30em) and (max-width: 47.9375em) {
     .product{
-        width: 90%;
+        width: 90% !important;
         margin: 20px auto;
         grid-template-columns: repeat(3, 32%);
     }
@@ -27,7 +27,7 @@
 
 @media  (min-width: 30em) and (max-width: 36.875em) {
     .product{
-        width: 90%;
+        width: 90% !important;
         margin: 20px auto;
         grid-template-columns: repeat(2, 47%);
     }
@@ -36,17 +36,9 @@
 /* Mobile small */
 @media (max-width: 29.9375em){
     .product{
-        width: 90%;
+        width: 90% !important;
         margin: 20px auto;
         grid-template-columns: repeat(2, 47%);
     }
 }
 
-@media (max-width: 24.375em) {
-    .product{
-        width: 90%;
-        margin: 20px auto;
-        grid-template-columns: repeat(1, 90%);
-        justify-content: center;
-    }
-}

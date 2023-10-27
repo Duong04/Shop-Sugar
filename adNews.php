@@ -1,6 +1,6 @@
 <?php 
-require('../sql/connect.php');
-$results = mysqli_query($conn,'SELECT * FROM products AS p INNER JOIN categories AS c ON c.category_id = p.category_id');
+require('./sql/connect.php');
+$results = mysqli_query($conn,'SELECT * FROM news AS n INNER JOIN users AS u ON u.user_id = n.user_id');
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -8,8 +8,8 @@ $results = mysqli_query($conn,'SELECT * FROM products AS p INNER JOIN categories
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SUGAR MOBILE</title>
-    <link rel="icon" href="../assets/img/logo/logo2.png" type="image/x-icon">
-    <link rel="stylesheet" href="../assets/fonts/fontawesome-free-6.2.1-web/css/all.min.css">
+    <link rel="icon" href="./assets/img/logo/logo2.png" type="image/x-icon">
+    <link rel="stylesheet" href="./assets/fonts/fontawesome-free-6.2.1-web/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Borel&family=Inclusive+Sans&family=Lobster&display=swap" rel="stylesheet">
@@ -34,6 +34,10 @@ $results = mysqli_query($conn,'SELECT * FROM products AS p INNER JOIN categories
             position: sticky;
             top: 0;
             overflow-y: auto;
+        }
+
+        img{
+            width: 100%;
         }
 
         .home-page{
@@ -77,15 +81,11 @@ $results = mysqli_query($conn,'SELECT * FROM products AS p INNER JOIN categories
         table{
             border-collapse: collapse;
             width: 100%;
-            margin: 30px auto;
+            margin:30px auto;
         }
 
         a{
             text-decoration: none;
-        }
-
-        img{
-            width: 100%;
         }
 
         th{
@@ -93,9 +93,16 @@ $results = mysqli_query($conn,'SELECT * FROM products AS p INNER JOIN categories
             color: #000;
         }
 
-        td:nth-child(3),
-        td:nth-child(5),
-        td:nth-child(6){
+        th:last-child{
+            width: 150px;
+        }
+
+        td:nth-child(3){
+            width: 100px;
+        }
+
+        td:nth-child(6),
+        td:nth-child(7){
             width: 70px;
         }
 
@@ -105,7 +112,7 @@ $results = mysqli_query($conn,'SELECT * FROM products AS p INNER JOIN categories
         }
 
         td:nth-child(1), td:nth-child(4){
-            width: 60px;
+            width: 80px;
             text-align: center;
         }
         
@@ -117,14 +124,6 @@ $results = mysqli_query($conn,'SELECT * FROM products AS p INNER JOIN categories
             color: red;
         }
 
-        td:nth-child(5){
-            width: 200px;
-        }
-
-        td:nth-child(6),td:nth-child(7){
-            width: 100px;
-            text-align: center;
-        }
         td a:hover{
             text-decoration: underline;
         }
@@ -148,37 +147,39 @@ $results = mysqli_query($conn,'SELECT * FROM products AS p INNER JOIN categories
 <body>
     <aside>
         <div class="home-page">
-            <a href="../index.php"><i class="fa-solid fa-house"></i> Home</a>
+            <a href="./index.php"><i class="fa-solid fa-house"></i> Home</a>
         </div>
         <div class="view-category">
-            <a href="index.php">Xem sản phẩm</a>
+            <a href="products.php">Xem sản phẩm</a>
             <a href="categories.php">Xem danh mục</a>
+            <a href="adNews.php">Xem tin tức</a>
         </div>
     </aside>
     <article>
-        <h2>Trang sản phẩm</h2>
+        <h2>Trang bài viết</h2>
         <div class="create">
-            <a href="createProduct.php">+ Thêm sản phẩm</a>
+            <a href="createNews.php">+ Thêm bài viết</a>
         </div>
         <table>
             <tr>
-                <th>Id</th>
-                <th>Product name</th>
-                <th>Image</th>
-                <th>Category id</th>
-                <th>Category name</th>
+                <th>News id</th>
+                <th>Title</th>
+                <th>image</th>
+                <th>User id</th>
+                <th>User</th>
                 <th colspan="2">Action</th>
+                
             </tr>
-            <?php while($row = mysqli_fetch_assoc($results)){?>
-                    <tr>
-                        <td><?php echo $row["product_id"] ?></td>
-                        <td><?php echo $row["product_name"] ?></td>
-                        <td><img src="../<?php echo $row["image_url"] ?>" alt=""></td>
-                        <td><?php echo $row["category_id"] ?></td>
-                        <td><?php echo $row["category_name"] ?></td>
-                        <td><a href='updateProduct.php?product_id=<?php echo $row['product_id'] ?>'><i class='fas fa-pencil-alt'></i> Sửa</a></td>
-                        <td><a href='deleteProduct.php?product_id=<?php echo $row['product_id'] ?>'> <i class='fas fa-trash'></i> Xóa</a></td>    
-                    </tr>
+            <?php while($row = mysqli_fetch_assoc($results)){ ?>
+            <tr>
+                <td><?php echo $row["news_id"] ?></td>
+                <td><h3><?php echo $row["title"] ?></h3></td>
+                <td><img src='<?php echo $row["image"] ?>' alt=''></td>
+                <td><?php echo $row["user_id"] ?></td>
+                <td><?php echo $row["username"] ?></td>
+                <td><a href='updateNews.php?news_id=<?php echo $row['news_id'] ?>'><i class='fas fa-pencil-alt'></i> Sửa</a></td>
+                <td><a href='deleteNews.php?news_id=<?php echo $row['news_id'] ?>'> <i class='fas fa-trash'></i> Xóa</a></td>    
+            </tr>
             <?php } ?>
         </table>
     </article>

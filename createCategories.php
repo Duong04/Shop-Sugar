@@ -1,5 +1,5 @@
 <?php 
-require('../sql/connect.php');
+require('./sql/connect.php');
 session_start();
 if(isset($_POST['category-name'])){
     if(isset($_SESSION['user_id'])){
@@ -21,7 +21,7 @@ if(isset($_POST['category-name'])){
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SUGAR MOBILE</title>
-    <link rel="icon" href="../assets/img/logo/logo2.png" type="image/x-icon">
+    <link rel="icon" href="./assets/img/logo/logo2.png" type="image/x-icon">
     <style>
         *{
             margin: 0;

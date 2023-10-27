@@ -146,24 +146,26 @@ if (isset($_SESSION['cart']) && is_array($_SESSION['cart']) && count($_SESSION['
                             $productPrice = $item['price'];
                             $productname = $item['product_name'];
                             $productImage = $item['image_url'];
-                            $totalPrice += $productPrice; 
+                            $quantity = $item['quantity'];
+                            $totalProduct = $productPrice * $quantity;
+                            $totalPrice += $totalProduct; 
                         ?>
                         <div class="product-item">
                             <div class="product-img">
-                                <img src=<?php echo $productImage; ?> alt="">
-                                <span>1</span>
+                                <img src="<?php echo $productImage; ?>" alt="">
+                                <span><?=$quantity?></span>
                             </div>
                             <div class="name-product">
                                 <h4><?php echo $productname; ?></h4>
                             </div>
-                            <div class="price"><span><?php echo number_format($productPrice,0,',','.'); ?></span><sup>đ</sup></div>
+                            <div class="price"><span><?php echo number_format($totalProduct,0,',','.'); ?></span><sup>đ</sup></div>
                         </div>
                         <?php } ?>
                     </div>
                     <div class="voucher">
                         <form action="">
                             <input type="text" placeholder="Mã giảm giá">
-                            <button>Sử dụng</button>
+                            <button disabled>Sử dụng</button>
                         </form>
                     </div>
                     <div class="prepare">

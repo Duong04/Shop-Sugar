@@ -44,27 +44,6 @@ session_start();
             <div class="banner-item">
                 <a href=""><img src="./assets/img/laptop/banner/img2.png" alt=""></a>
             </div>   
-            <div class="banner-item">
-                <a href=""><img src="./assets/img/mobile/banner/img2.png" alt=""></a>
-            </div>  
-            <div class="banner-item">
-                <a href=""><img src="./assets/img/tablet/banner/img2.png" alt=""></a>
-            </div> 
-            <div class="banner-item">
-                <a href=""><img src="./assets/img/clock/banner/img2.png" alt=""></a>
-            </div> 
-            <div class="banner-item">
-                <a href=""><img src="./assets/img/laptop/banner/img3.png" alt=""></a>
-            </div>   
-            <div class="banner-item">
-                <a href=""><img src="./assets/img/mobile/banner/img3.png" alt=""></a>
-            </div>  
-            <div class="banner-item">
-                <a href=""><img src="./assets/img/tablet/banner/img3.png" alt=""></a>
-            </div> 
-            <div class="banner-item">
-                <a href=""><img src="./assets/img/clock/banner/img3.png" alt=""></a>
-            </div> 
         </div>
         <!-- link-product -->
         <div class="link-info">

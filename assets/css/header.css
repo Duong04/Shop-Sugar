@@ -173,14 +173,15 @@ nav{
     color: var(--bgr-color);
 }
 
-.logout-child,
-.admin-2{
+.logout-child a,
+.admin-2 a{
     width: 100%;
     padding: 8px;
+    display: inline-block;
 }
 
-.logout-child:hover,
-.admin-2:hover{
+.logout-child a:hover,
+.admin-2 a:hover{
     background-color: var(--main-color);
 }
 

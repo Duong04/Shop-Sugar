@@ -38,8 +38,8 @@ if(isset($_POST['email']) && isset($_POST['psw']) && isset($_POST['confirm-psw']
                     $mail->addAddress($email); 
                     $mail->isHTML(true);                                  //Set email format to HTML
                     $mail->Subject = 'Xác nhận đăng ký';
-                    $mail->Body    = 'Nhấp vào liên kết để kích hoạt tài khoản http://sugarmobile.online/confirm.php';
-                    $mail->AltBody = 'Nhấp vào liên kết để kích hoạt tài khoản http://sugarmobile.online/confirm.php';
+                    $mail->Body    = 'Nhấp vào liên kết để kích hoạt tài khoản http://localhost/php/asgm/confirm.php';
+                    $mail->AltBody = 'Nhấp vào liên kết để kích hoạt tài khoản http://localhost/php/asgm/confirm.php';
                 
                     $mail->send();
                     echo "<script>alert('Vui lòng check mail để kích hoạt tài khoản');</script>";

@@ -6,22 +6,37 @@ if (isset($_POST['add-cart'])) {
     $result = mysqli_query($conn, "SELECT * FROM products WHERE product_id = '$product_id'");
     $product = mysqli_fetch_assoc($result);
 
-    // Thêm sản phẩm vào giỏ hàng
-    if (!isset($_SESSION['cart'])) {
-        $_SESSION['cart'] = array();
+    // Kiểm tra xem sản phẩm đã có trong giỏ hàng chưa
+    $is_in_cart = false;
+    $index = 1;
+    if (isset($_SESSION['cart']) && !empty($_SESSION['cart'])) {
+        foreach ($_SESSION['cart'] as $key => $cart_item) {
+            if ($cart_item['product_id'] == $product['product_id']) {
+                $is_in_cart = true;
+                $index = $key;
+                break;
+            }
+        }
     }
 
-    $cart_item = array(
-        'image_url' => $product['image_url'],
-        'product_id' => $product['product_id'],
-        'product_name' => $product['product_name'],
-        'price' => $product['price'],
-        'old_price' => $product['old_price']
-    );
-    
-    $_SESSION['cart'][] = $cart_item;
+    // Nếu sản phẩm chưa có trong giỏ hàng, thêm sản phẩm vào giỏ hàng
+    if (!$is_in_cart) {
+        $cart_item = array(
+            'image_url' => $product['image_url'],
+            'product_id' => $product['product_id'],
+            'product_name' => $product['product_name'],
+            'price' => $product['price'],
+            'old_price' => $product['old_price'],
+            'quantity' => 1
+        );
 
-     $previous_page = $_SERVER['HTTP_REFERER'];
+        $_SESSION['cart'][] = $cart_item;
+    } else {
+        // Nếu sản phẩm đã có trong giỏ hàng, tăng số lượng lên 1
+        $_SESSION['cart'][$index]['quantity'] += 1;
+    }
+
+    $previous_page = $_SERVER['HTTP_REFERER'];
     header('Location: ' . $previous_page);
     exit();
 
@@ -60,18 +75,22 @@ if (isset($_POST['add-cart'])) {
                                 <tr>
                                     <th style="padding-left: 10px;">Sản phẩm</th>
                                     <th>Số lượng</th>
+                                    <th>Thành tiền</th>
                                     <th>Xóa</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <?php 
                                     if (isset($_SESSION['cart'])) {
-                                        foreach ($_SESSION['cart'] as $item) {   
+                                        $total = 0;
+                                        foreach ($_SESSION['cart'] as $item) { 
+                                        $priceTotal = $item['quantity'] * $item['price'];
+                                        $total += $priceTotal;
                                 ?>
                                 <tr class="product-item">
                                     <td>
                                         <div class="product-img">
-                                            <img src=<?php echo $item['image_url'] ?> alt="">
+                                            <img src="<?php echo $item['image_url'] ?>" alt="">
                                         </div>
                                         <div class="product-name">
                                             <h5><?php echo $item['product_name']; ?></h5>
@@ -80,13 +99,8 @@ if (isset($_POST['add-cart'])) {
                                             </div>
                                         </div>
                                     </td>
-                                    <td>
-                                        <div class="input">
-                                            <button class="quantity-button-01" onclick="decreaseQuantity(0)">-</button>
-                                            <input class="quantity-input" type="number" value="1" min="1" max="10" id="quantity-product1" onchange="updateTotalPrice()">
-                                            <button class="quantity-button-02" onclick="increaseQuantity(0)">+</button>
-                                        </div>
-                                    </td>
+                                    <td><?php echo $item['quantity']; ?></td>
+                                    <td><?php echo number_format($priceTotal, 0, ',', '.'); ?></td>
                                     <td><a href="remove_cart_item.php?product_id=<?php echo $item['product_id']; ?>"><i class="fa-solid fa-trash-can"></i></a></td>
                                 </tr>
                                 <?php } }; ?>
@@ -102,7 +116,7 @@ if (isset($_POST['add-cart'])) {
                                 foreach ($_SESSION['cart'] as $cart_item) {
                                    $totalPrice += $cart_item['price']; // Thêm giá sản phẩm vào tổng tiền
                                }
-                               echo number_format($totalPrice, 0, ',', '.');;
+                               echo number_format($total, 0, ',', '.');;
                             }
                             ?></span><sup>đ</sup></p>
                         </div>
